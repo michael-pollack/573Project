@@ -2,9 +2,6 @@ nltk
 wordcloud
 scikit-learn
 pandas
-random
-json
-csv
 parquet
 matplotlib
 numpy
