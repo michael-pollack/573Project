@@ -1,6 +1,8 @@
-Have a lovely day
+Step 1:
+Set up your environment using *requirements.txt*
 
-I added a git ignore that contains data/ to stand in for our data so we can run it locally 
+Step 2:
+all the imports you need are in *importables.py*
 
 below is the structure of the data folder
 
