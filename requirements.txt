@@ -1,4 +1,13 @@
 nltk
 wordcloud
-sklearn
+scikit-learn
 pandas
+random
+json
+csv
+parquet
+matplotlib
+numpy
+seaborn
+xgboost
+tabulate
