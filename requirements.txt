@@ -1,0 +1,4 @@
+nltk
+wordcloud
+sklearn
+pandas
