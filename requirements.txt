@@ -8,3 +8,4 @@ numpy
 seaborn
 xgboost
 tabulate
+fastparquet
