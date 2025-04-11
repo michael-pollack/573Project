@@ -4,7 +4,7 @@ Set up your environment using *requirements.txt*
 Step 2:
 all the imports you need are in *importables.py*
 
-below is the structure of the data folder
+Due to the size of the data files, they are not hosted on this repo. The expectation is that you have the files locally saved in the following directory structure:
 
 ```
 .
