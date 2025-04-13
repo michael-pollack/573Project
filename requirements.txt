@@ -2,10 +2,8 @@ nltk
 wordcloud
 scikit-learn
 pandas
-parquet
 matplotlib
 numpy
 seaborn
-xgboost
 tabulate
 fastparquet
