@@ -1,0 +1,68 @@
+# This file is used to create a conda environment for our 573 project
+# run this command in the terminal to create the environment:
+# conda env create -f environment.yml
+# after creating the environment, activate it with:
+# conda activate 573
+
+name: '573'
+channels:
+  - conda-forge
+  - https://repo.anaconda.com/pkgs/main
+  - https://repo.anaconda.com/pkgs/r
+dependencies:
+  - _libgcc_mutex=0.1=conda_forge
+  - _openmp_mutex=4.5=2_gnu
+  - bzip2=1.0.8=h4bc722e_7
+  - ca-certificates=2025.1.31=hbcca054_0
+  - ld_impl_linux-64=2.43=h712a8e2_4
+  - libexpat=2.7.0=h5888daf_0
+  - libffi=3.4.6=h2dba641_1
+  - libgcc=14.2.0=h767d61c_2
+  - libgcc-ng=14.2.0=h69a702a_2
+  - libgomp=14.2.0=h767d61c_2
+  - liblzma=5.8.1=hb9d3cd8_0
+  - liblzma-devel=5.8.1=hb9d3cd8_0
+  - libnsl=2.0.1=hd590300_0
+  - libsqlite=3.49.1=hee588c1_2
+  - libuuid=2.38.1=h0b41bf4_0
+  - libzlib=1.3.1=hb9d3cd8_2
+  - ncurses=6.5=h2d0b736_3
+  - openssl=3.5.0=h7b32b05_0
+  - pip=25.0.1=pyh8b19718_0
+  - python=3.11.4=hab00c5b_0_cpython
+  - readline=8.2=h8c095d6_2
+  - setuptools=78.1.0=pyhff2d567_0
+  - tk=8.6.13=noxft_h4845f30_101
+  - wheel=0.45.1=pyhd8ed1ab_1
+  - xz=5.8.1=hbcc6ac9_0
+  - xz-gpl-tools=5.8.1=hbcc6ac9_0
+  - xz-tools=5.8.1=hb9d3cd8_0
+  - pip:
+      - click==8.1.8
+      - contourpy==1.3.1
+      - cramjam==2.10.0
+      - cycler==0.12.1
+      - fastparquet==2024.11.0
+      - fonttools==4.57.0
+      - fsspec==2025.3.2
+      - joblib==1.4.2
+      - kiwisolver==1.4.8
+      - matplotlib==3.10.1
+      - nltk==3.9.1
+      - numpy==2.2.4
+      - packaging==24.2
+      - pandas==2.2.3
+      - pillow==11.2.1
+      - pyparsing==3.2.3
+      - python-dateutil==2.9.0.post0
+      - pytz==2025.2
+      - regex==2024.11.6
+      - scikit-learn==1.6.1
+      - scipy==1.15.2
+      - seaborn==0.13.2
+      - six==1.17.0
+      - tabulate==0.9.0
+      - threadpoolctl==3.6.0
+      - tqdm==4.67.1
+      - tzdata==2025.2
+      - wordcloud==1.9.4
