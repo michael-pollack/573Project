@@ -1,3 +1,9 @@
+# This file is used to create a conda environment for our 573 project
+# run this command in the terminal to create the environment:
+# conda env create -f environment.yml
+# after creating the environment, activate it with:
+# conda activate 573
+
 name: '573'
 channels:
   - conda-forge

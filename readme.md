@@ -1,10 +1,12 @@
-Step 1:
-Set up your environment using *requirements.txt*
+# Environment setup
 
-Step 2:
-all the imports you need are in *importables.py*
+How to set up your environment:
+conda env create -f environment.yml
+conda activate 573
 
-Due to the size of the data files, they are not hosted on this repo. The expectation is that you have the files locally saved in the following directory structure:
+# Data files
+
+Due to the size of the data files, they are not hosted on this repo. Save the data sets locally in the following directory structure:
 
 ```
 .
@@ -21,7 +23,7 @@ Due to the size of the data files, they are not hosted on this repo. The expecta
 │       └── validation-00000-of-00001.parquet
 ```
 
-Here are the links for our data on hugging face
+Here are the links for the data on hugging face
 
 https://huggingface.co/datasets/BioLaySumm/BioLaySumm2025-PLOS/tree/main/data
 
