@@ -4,6 +4,8 @@ How to set up your environment:
 conda env create -f environment.yml
 conda activate 573
 
+Python is specified as 3.11.12. All other packages will be installed with the latest version.
+
 # Data files
 
 Due to the size of the data files, they are not hosted on this repo. Save the data sets locally in the following directory structure:
