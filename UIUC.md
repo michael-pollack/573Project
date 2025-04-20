@@ -8,6 +8,7 @@ Install 573 environment file
 
 - [eLife](https://drive.google.com/drive/folders/156GqK28jpHpmFpsqLLAxHxgQThLqe8Is?usp=sharing): [DPR-train](https://drive.google.com/file/d/1RvLsuaBZ83SLdm9C4h8WVeYvnKzvCNVW/view?usp=drive_link), [DPR-val](https://drive.google.com/file/d/13GUIIbsxNdAk0LceUiOvBlIhvhjPdxIx/view?usp=drive_link), [wiki-definition-train](https://drive.google.com/file/d/1HohUnEVW2sZ5OO1EPASH0WfLp2aBLsuW/view?usp=sharing), [wiki-definition-val](https://drive.google.com/file/d/1x_eNeuRys1b8OsehCQU8Gr_VtxzxzE3q/view?usp=sharing), [extractive-summary-train](https://drive.google.com/file/d/18ZD8cL48yenK6nJmlCPXpbbOWTmX3H8y/view?usp=drive_link), [extractive-summary-val](https://drive.google.com/file/d/1CIqRyA50IpkqyivAnmhpbM4ety-OojA0/view?usp=drive_link).
 - [PLOS](https://drive.google.com/drive/folders/1KftJ_LKVG-DCNacL2xuqA-OdlmRG89AG?usp=sharing): [DPR-train](https://drive.google.com/file/d/1pnZgSUTXyVpSxKPC2nlcl3eLpZMoZKG9/view?usp=sharing), [DPR-val](https://drive.google.com/file/d/1EYhs3snDcPJ2Ao-ztfIrF8EqwmS2iaOF/view?usp=sharing), [wiki-definition-train](https://drive.google.com/file/d/1_j52ZVbvPYhHAlXOwrS9IKE68Yi2LmVN/view?usp=drive_link), [wiki-definition-val](https://drive.google.com/file/d/1mhdop2dx7whygTOk27b_DY3D4SOWroTw/view?usp=drive_link), [extractive-summary-train](https://drive.google.com/file/d/1uVZl21eyZAGJPQiBXA9Prb9jIzYhxdn0/view?usp=drive_link), [extractive-summary-val](https://drive.google.com/file/d/10ww5h3Fk-tyJvdmOvQRjGWHdU1VimvZt/view?usp=drive_link)
+- [NLM structured section labels](https://wayback.archive-it.org/7867/20241213200411/https://lhncbc.nlm.nih.gov/ii/areas/structured-abstracts/downloads/Structured-Abstracts-Labels-102615.txt)
 
 ## File preparation
 Change the data path in utils.py line 37 to your data folder
@@ -24,6 +25,9 @@ python contrastive_dataset_creation.py \
         --pos-threshold 0.9 \
         --neg-threshold 0.01
 ```
+![sequence](images/contrastive.jpg)
+
+
 #### 2. Fine-tune the Extractive Summarizer
 Use the above constractive datasets to fine-tune the extractive summarizer:
 ```bash
@@ -32,6 +36,9 @@ python fine_tune_extractive_summarizer.py \
     --val_data data/elife_val_sentence_level_positive_negative_pairs.csv \
     --output_path elife_trained_model
 ```
+![sequence](images/finetune_sequencediagram.JPG)
+![class](images/finetune_classdiagram.JPG)
+
 #### 3. Generate Extractive Summaries
 After fine-tuning the extractive summarization model, run the following command to generate extractive summaries:
 
@@ -43,3 +50,4 @@ python run_extractive_summarization.py \
     --labels_file data/Structured-Abstracts-Labels-102615.txt \
     --model_path elife_trained_model \
     --output_dir elife_extractive_summaries
+```
