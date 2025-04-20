@@ -36,8 +36,8 @@ python fine_tune_extractive_summarizer.py \
     --val_data data/elife_val_sentence_level_positive_negative_pairs.csv \
     --output_path elife_trained_model
 ```
-![sequence](images/finetune_sequencediagram.JPG)
-![class](images/finetune_classdiagram.JPG)
+![sequence](images/finetune_sequence.jpg)
+![class](images/finetune_class.jpg)
 
 #### 3. Generate Extractive Summaries
 After fine-tuning the extractive summarization model, run the following command to generate extractive summaries:
@@ -51,3 +51,4 @@ python run_extractive_summarization.py \
     --model_path elife_trained_model \
     --output_dir elife_extractive_summaries
 ```
+![sequence](images/extractive_sequencediagram.png)
