@@ -1,7 +1,7 @@
 ## Environment preparation
 Install 573 environment file
 
-    pip install torch, langchain, logger, datasets, accelerate>=0.26.0, bert-extractive-summarizer
+    pip install torch, langchain, logger, datasets, accelerate>=0.26.0, bert-extractive-summarizer, evaluate, rouge_score
 
 
 ## Download files and place in data folder
@@ -52,3 +52,8 @@ python run_extractive_summarization.py \
     --output_dir elife_extractive_summaries
 ```
 ![sequence](images/extractive_sequencediagram.png)
+
+### 4. Fine tune e-life
+
+Change paths on 68, 179
+Confirm that your elife files all have elife in lowercase in the filename
