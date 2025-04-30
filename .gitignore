@@ -4,3 +4,6 @@ project copy.ipynb
 elife.txt
 elife_test.txt
 elife_val.txt
+df_elife_clean.csv
+df_elife_train_clean.csv
+elife_summaries.txt
