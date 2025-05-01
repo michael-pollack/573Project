@@ -33,7 +33,7 @@ def main(pred_file, ref_file, output_file):
     for pred, ref in tqdm(zip(predictions, references), total=len(predictions)):
         r_scores = scorer.score(ref, pred)
         bleu = sentence_bleu([ref.split()], pred.split(), smoothing_function=smoother)
-        #meteor = single_meteor_score(ref, pred)
+        meteor = single_meteor_score(ref, pred)
         #P, R, F1 = bert_score([pred], [ref], lang="en", verbose=False)
 
         try:
@@ -52,7 +52,7 @@ def main(pred_file, ref_file, output_file):
             "ROUGE-2": r_scores['rouge2'].fmeasure,
             "ROUGE-L": r_scores['rougeL'].fmeasure,
             "BLEU": bleu,
-            #"METEOR": meteor,
+            "METEOR": meteor,
             #"BERTScore_F1": F1[0].item(),
             "FKGL": fkgl,
             "DCRS": dcrs,
