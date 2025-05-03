@@ -78,7 +78,7 @@ if __name__ == "__main__":
     parser.add_argument(
         "--output_csv", # This is where the new dataframe with a summaries column will be saved
         type=str,
-        dealault="data/elife_summaries.csv"
+        default="data/elife_summaries.csv"
     )
     parser.add_argument(
         "--output_txt", #This is where the summaries will be saved to as a txt document
