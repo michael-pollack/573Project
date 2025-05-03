@@ -99,7 +99,7 @@ if __name__ == "__main__":
     vector_scores = vectorizer.fit_transform(clean_column)
 
 
-    summary_percent = 0.4 # Percentage of total document sentences to save as the summary
+    summary_percent = args.summary_percent # Percentage of total document sentences to save as the summary
     doc_summaries = [] # List to store the document summaries
     doc_list = df_clean.article.tolist() # List of all the docs in the article column
 
