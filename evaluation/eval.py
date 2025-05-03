@@ -10,13 +10,32 @@ import lens
 # from sumac.score import SummaCZS
 from tqdm import tqdm
 
-def read_lines(file_path):
-    with open(file_path, "r", encoding="utf-8") as f:
-        return [line.strip() for line in f.readlines() if line.strip()]
+import json
+import evaluate
+
+def read_data(file_path):
+    if file_path.endswith(".json"):
+        with open(file_path, "r", encoding="utf-8") as f:
+            data = []
+            for line in f:
+                try:
+                    data.append(json.loads(line)["summary"])
+                except json.JSONDecodeError as e:
+                    print(f"Error decoding JSON: {e}, Line: {line}")
+            return data
+    else:
+        with open(file_path, "r", encoding="utf-8") as f:
+            # remove the start and end quotes from each line
+            return [line.strip()[1:-1] for line in f.readlines() if line.strip()]
+        
+def cal_meteor(preds, refs):
+  meteor = evaluate.load('meteor')
+  scores = meteor.compute(predictions=preds, references=refs)["meteor"]
+  return scores
 
 def main(pred_file, ref_file, output_file):
-    predictions = read_lines(pred_file)
-    references = read_lines(ref_file)
+    predictions = read_data(pred_file)
+    references = read_data(ref_file)
 
     print(f"Predictions: {len(predictions)}")
     print(f"References: {len(references)}")
@@ -33,7 +52,8 @@ def main(pred_file, ref_file, output_file):
     for pred, ref in tqdm(zip(predictions, references), total=len(predictions)):
         r_scores = scorer.score(ref, pred)
         bleu = sentence_bleu([ref.split()], pred.split(), smoothing_function=smoother)
-        meteor = single_meteor_score(ref, pred)
+        #meteor = single_meteor_score(ref, pred)
+        meteor = cal_meteor([pred], [ref])
         #P, R, F1 = bert_score([pred], [ref], lang="en", verbose=False)
 
         try:
@@ -74,8 +94,8 @@ if __name__ == "__main__":
     # parser.add_argument("--output_file", type=str, default="evaluation_results.csv", help="Where to save the evaluation scores.")
     # args = parser.parse_args()
 
-    pred_file = "/home/jen/573Project-1/elife_summaries100.txt"
-    ref_file = "/home/jen/573Project-1/elife_references100.json"
+    pred_file = "/home/jen/573Project-1/evaluation/elife_summaries100.txt"
+    ref_file = "/home/jen/573Project-1/evaluation/elife_references100.json"
     output_file = "evaluation_results.csv"
 
     main(pred_file, ref_file, output_file)
