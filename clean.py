@@ -52,10 +52,15 @@ def main(input_file, output_file):
     df['cleaned_text'] = df['article'].apply(clean_text)
     df['filtered_text'] = df['cleaned_text'].apply(remove_stopwords)
     tfidf_matrix, feature_names = run_tfidf(df['filtered_text'])
+
+    # use the tfidf matrix to 
+
+
     save_as_text(tfidf_matrix, feature_names, output_file)
+
 if __name__ == "__main__":      
     
     input_file = 'data/Elife/test-00000-of-00001.parquet'
-    output_file = 'test_summaries.txt'
+    output_file = 'test_summaries_quick.txt'
     
     main(input_file, output_file)
