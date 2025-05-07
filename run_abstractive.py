@@ -2,11 +2,11 @@
 import argparse
 import torch
 import pandas as pd
-from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
+from transformers import PegasusTokenizer, AutoModelForSeq2SeqLM
 
 def generate_summaries(model_path, input_file, output_file, max_input_length=512, max_output_length=128):
     # Load model and tokenizer
-    tokenizer = AutoTokenizer.from_pretrained(model_path)
+    tokenizer = PegasusTokenizer.from_pretrained(model_path, use_fast=False)
     model = AutoModelForSeq2SeqLM.from_pretrained(model_path)
     model.eval()
 
@@ -14,9 +14,10 @@ def generate_summaries(model_path, input_file, output_file, max_input_length=512
         model.to("cuda")
 
     # Load input articles
-    df = pd.read_json(input_file, lines=True)
-    inputs = df["article"].tolist()
-
+    # df = pd.read_json(input_file, lines=True)
+    with open(input_file, 'r') as input:
+        inputs = input.readlines()
+    
     # Generate summaries
     summaries = []
     for text in inputs:
@@ -44,8 +45,12 @@ def generate_summaries(model_path, input_file, output_file, max_input_length=512
         summaries.append(summary)
 
     # Save to output file
-    df["generated_summary"] = summaries
-    df.to_json(output_file, orient="records", lines=True)
+    with open(output_file, 'w') as output:
+        for summ in summaries:
+            output.write(summ)
+            output.write("\n\n")
+    # df["generated_summary"] = summaries
+    # df.to_json(output_file, orient="records", lines=True)
     print(f"Summaries written to {output_file}")
 
 if __name__ == "__main__":

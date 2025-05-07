@@ -31,7 +31,7 @@ def load_data(train_path, val_path, test_path):
     })
     return dataset
 
-def preprocess_function(examples, tokenizer, max_input_length=512, max_target_length=128):
+def preprocess_function(examples, tokenizer, max_input_length=512, max_target_length=200):
     model_inputs = tokenizer(
         examples["article"], max_length=max_input_length, truncation=True, padding="max_length"
     )
@@ -46,7 +46,7 @@ def main():
     parser.add_argument("--train_file", type=str, required=True)
     parser.add_argument("--val_file", type=str, required=True)
     parser.add_argument("--test_file", type=str, required=True)
-    parser.add_argument("--output_dir", type=str, default="./pegasus_large_model")
+    parser.add_argument("--output_dir", type=str, default="./pegasus_large_model_x2")
     parser.add_argument("--num_train_epochs", type=int, default=3)
     parser.add_argument("--per_device_train_batch_size", type=int, default=2)
     parser.add_argument("--per_device_eval_batch_size", type=int, default=2)

@@ -1,113 +1,28 @@
-# This file is used to create a conda environment for our 573 project
-# run this command in the terminal to create the environment:
-# conda env create -f environment.yml
-# after creating the environment, activate it with:
-# conda activate 573
-
-name: '573'
+name: pegasus-env3
 channels:
   - conda-forge
-  - https://repo.anaconda.com/pkgs/main
-  - https://repo.anaconda.com/pkgs/r
+  - defaults
 dependencies:
-  - _libgcc_mutex
-  - _openmp_mutex
-  - asttokens
-  - bzip2
-  - ca-certificates
-  - comm
-  - debugpy
-  - decorator
-  - exceptiongroup
-  - executing
-  - importlib-metadata
-  - ipykernel
-  - ipython
-  - ipython_pygments_lexers
-  - jedi
-  - jupyter_client
-  - jupyter_core
-  - keyutils
-  - krb5
-  - ld_impl_linux-64
-  - libedit
-  - libexpat
-  - libffi
-  - libgcc
-  - libgcc-ng
-  - libgomp
-  - liblzma
-  - liblzma-devel
-  - libnsl
-  - libsodium
-  - libsqlite
-  - libstdcxx
-  - libstdcxx-ng
-  - libuuid
-  - libxcrypt
-  - libzlib
-  - matplotlib-inline
-  - ncurses
-  - nest-asyncio
-  - openssl
-  - packaging
-  - parso
-  - pexpect
-  - pickleshare
+  - python=3.11
   - pip
-  - platformdirs
-  - prompt-toolkit
-  - psutil
-  - ptyprocess
-  - pure_eval
-  - pygments
-  - python=3.11.12
-  - python-dateutil
-  - python_abi
-  - pyzmq
-  - readline
-  - setuptools
-  - six
-  - stack_data
-  - tk
-  - tornado
-  - traitlets
-  - typing_extensions
-  - wcwidth
-  - wheel
-  - xz
-  - xz-gpl-tools
-  - xz-tools
-  - zeromq
-  - zipp
-  - requests
+  - numpy
+  - pandas
+  - scikit-learn
+  - scipy
+  - nltk
+  - tqdm
+  - regex
+  - pytz
+  - jinja2
+  - filelock
+  - fsspec
+  - sentencepiece
+  - ca-certificates
+  - openssl
   - pip:
-      - certifi
-      - charset-normalizer
-      - click
-      - contourpy
-      - cramjam
-      - cycler
-      - fastparquet
-      - fonttools
-      - fsspec
-      - idna
-      - joblib
-      - kiwisolver
-      - matplotlib
-      - nltk
-      - numpy
-      - pandas
-      - pillow
-      - pyparsing
-      - pytz
-      - regex
-      - scikit-learn
-      - scipy
-      - seaborn
-      - tabulate
-      - threadpoolctl
-      - tqdm
-      - tzdata
-      - urllib3
-      - wordcloud
+      - transformers==4.51.3
+      - torch==2.7.0
+      - tiktoken==0.9.0
+      - huggingface-hub==0.30.2
+      - tokenizers==0.21.1
+      - safetensors==0.5.3
