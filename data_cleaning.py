@@ -52,37 +52,35 @@ if __name__ == "__main__":
     parser.add_argument(
         "--parquet_path", # This is the path to the parquet data file
         type=str,
-        default="data/Elife/train-00000-of-00001.parquet",
+        #default="data/Elife/train-00000-of-00001.parquet",
     )
     parser.add_argument(
         "--output_csv", # This is where the clean dataframe will be saved
         type=str,
-        dealault="data/df_elife_train_clean.csv"
+        #default="data/df_elife_train_clean.csv"
     )
     args = parser.parse_args()
 
 
     orig_df = pd.read_parquet(args.parquet_path)
 
-    #code to remove documents of more than 11000 words
+    # code to remove documents of more than 11000 words
     new_df = orig_df[orig_df['article'].str.len() < 110000 ]
     print(new_df.shape)
     articles_no_outliers = new_df.article.tolist()
     print(len(articles_no_outliers))
 
-    #run data through data parens cleaning function
+    #r un data through data parens cleaning function
     no_parens_corpus = []
     for doc in articles_no_outliers:
         no_parens_corpus.append(remove_between_parens(doc))
-    print("done")
+    print("done cleaning parentheses")
 
-    # #runs data through data cleaning function
-    # run this cell unless otehrwise specified
-
+    # runs data through data cleaning function
     clean_corpus = []
     for doc in no_parens_corpus:
         clean_corpus.append(data_cleaner(doc))
-    print("done")
+    print("done cleaning data")
     new_df['clean'] = clean_corpus
 
     new_df.to_csv(args.output_csv, index=True)
