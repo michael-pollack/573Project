@@ -63,7 +63,8 @@ def sentence_value_creator(doc_sents: list, doc_vector, vectorizer) -> list: # L
             if word in vectorizer.vocabulary_: # If the word is in the TF-IDF vocabulary
                 vec_val = doc_vector[0, vectorizer.vocabulary_[word]] # Get the vector score from TF_IDF vectorizer
                 c += vec_val # Add the vector score to the total sentence score
-        sent_index_val_dict.append((i,float(c))) # Append a tuple of (index, score) for the sentence 
+        score = float(c)/float(len(sent_split)) # Normalize for sentence length = c/sent_length
+        sent_index_val_dict.append((i,score)) # Append a tuple of (index, score) for the sentence 
     return sent_index_val_dict # Return the list of sentence (index, score) tuples
 
 def main(args):
