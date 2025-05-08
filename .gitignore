@@ -1,5 +1,5 @@
 data/
 Cell output 39 \[DW].csv
 project copy.ipynb
-*.csv
 *.txt
+evaluation_results.csv
