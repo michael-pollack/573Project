@@ -2,6 +2,7 @@
 import argparse
 import torch
 import pandas as pd
+import tqdm
 from transformers import PegasusTokenizer, AutoModelForSeq2SeqLM
 
 def generate_summaries(model_path, input_file, output_file, max_input_length=512, max_output_length=128):
@@ -20,7 +21,7 @@ def generate_summaries(model_path, input_file, output_file, max_input_length=512
     
     # Generate summaries
     summaries = []
-    for text in inputs:
+    for text in tqdm(inputs, "Processing Inputs"):
         inputs_tokenized = tokenizer(
             text,
             return_tensors="pt",
