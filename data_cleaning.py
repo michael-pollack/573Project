@@ -84,3 +84,9 @@ if __name__ == "__main__":
     new_df['clean'] = clean_corpus
 
     new_df.to_csv(args.output_csv, index=True)
+
+    """
+    python /home/jen/573Project-1/data_cleaning.py   \
+    --parquet_path data/PLOS/test-00000-of-00001.parquet   \
+    --output_csv data/0507_plos_clean_test.csv
+    """
