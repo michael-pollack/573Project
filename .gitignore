@@ -3,3 +3,4 @@ project copy.ipynb
 *.csv
 *.txt
 *.json
+evaluation/results.csv
