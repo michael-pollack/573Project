@@ -49,7 +49,7 @@ def remove_between_parens(doc):
     doc = re.sub(r"\([^()]*\)|\[[^\]]*\]|\{[^}]*\}", "", doc)
     return doc
 
-def sentence_value_creator_2(doc_sents: list, vect_obj, vectorizer) -> list: # List of sentences in a document -> list of tuples (index, sum)
+def sentence_value_creator_2(doc_sents: list, doc_vector, vectorizer) -> list: # List of sentences in a document -> list of tuples (index, sum)
     """ 
     A function to take in a single article at a time, split the article by sentences, clean those sentences, split each sentence by words,
     match each word with its vector, sum the vectors and returns a list of tuples (sentence index, vector sums)
@@ -61,7 +61,7 @@ def sentence_value_creator_2(doc_sents: list, vect_obj, vectorizer) -> list: # L
         sent_split = clean_sent.split() # Split sentence by words
         for word in sent_split: # For every word in the sentence
             if word in vectorizer.vocabulary_: # If the word is in the TF-IDF vocabulary
-                vec_val = vect_obj[i, vectorizer.vocabulary_[word]] # Get the vector score from TF_IDF vectorizer
+                vec_val = doc_vector[0, vectorizer.vocabulary_[word]] # Get the vector score from TF_IDF vectorizer
                 c += vec_val # Add the vector score to the total sentence score
         sent_index_val_dict.append((i,float(c))) # Append a tuple of (index, score) for the sentence 
     return sent_index_val_dict # Return the list of sentence (index, score) tuples
@@ -82,12 +82,13 @@ def main(args):
     doc_summaries = [] # List to store the document summaries
     doc_list = df_clean.article.tolist() # List of all the docs in the article column
 
-    for doc in doc_list: # For every document
+    for doc_idx, doc in enumerate(doc_list): # For every document
         no_parens = remove_between_parens(doc) # Remove citations and other parentheses from the document
         doc_sents = nltk.sent_tokenize(no_parens) # Split the document into sentences
         doc_length = len(doc_sents) # Get the total number of sentences in the document
         top_num = int(summary_percent * doc_length) # Calculate the number of sentences to keep for the summary
-        sent_scores = sentence_value_creator_2(doc_sents, vector_scores, vectorizer) # Pass vectorizer as argument and Get list of (index, score) pairs for all the document sentences
+        doc_vector = vector_scores[doc_idx]
+        sent_scores = sentence_value_creator_2(doc_sents, doc_vector, vectorizer) # Pass vectorizer as argument and Get list of (index, score) pairs for all the document sentences
         sorted_scores = sorted(sent_scores, key=lambda x: x[1]) # Sort based on second tuple object; sort by score
         sorted_scores = sorted_scores[-top_num:] # Crop to just the top top_num sents
         sorted_sents = sorted(sorted_scores, key = lambda x: x[0]) # Sort the top sents by index so they are in the logical order
