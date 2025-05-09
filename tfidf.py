@@ -145,7 +145,8 @@ if __name__ == "__main__":
 
 
     """
-python /home/jen/573Project-1/tfidf.py \
+
+python ./tfidf.py \
   --summary_percent .4 \
   --clean_csv data/0507_plos_clean_test.csv \
   --output_csv data/0507_plos_clean_test.csv \
