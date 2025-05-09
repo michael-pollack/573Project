@@ -1,15 +1,17 @@
 import argparse
 import nltk
-nltk.download('stopwords')
 from nltk.corpus import stopwords
-nltk.download('wordnet')
 from nltk.corpus import wordnet
 from nltk import pos_tag
 from nltk.stem import WordNetLemmatizer
-from nltk.tokenize import regexp_tokenize, word_tokenize, RegexpTokenizer
-import pandas as pd
-import re
 
+# Download required NLTK data at module level after imports
+import re
+import pandas as pd
+from nltk.tokenize import regexp_tokenize, word_tokenize, RegexpTokenizer
+
+nltk.download('stopwords')
+nltk.download('wordnet')
 from sklearn.feature_extraction.text import TfidfVectorizer
 
 
