@@ -1,6 +1,6 @@
 import argparse
 import nltk
-import tqdm
+from tqdm import tqdm
 nltk.download('stopwords')
 from nltk.corpus import stopwords
 nltk.download('wordnet')
@@ -64,7 +64,7 @@ def sentence_value_creator(doc_sents: list, doc_vector, vectorizer) -> list: # L
             if word in vectorizer.vocabulary_: # If the word is in the TF-IDF vocabulary
                 vec_val = doc_vector[0, vectorizer.vocabulary_[word]] # Get the vector score from TF_IDF vectorizer
                 c += vec_val # Add the vector score to the total sentence score
-        score = float(c)/float(len(sent_split)) # Normalize for sentence length = c/sent_length
+        score = float(c)/float(len(sent_split)) if len(sent_split) != 0 else 0 # Normalize for sentence length = c/sent_length
         sent_index_val_dict.append((i,score)) # Append a tuple of (index, score) for the sentence 
     return sent_index_val_dict # Return the list of sentence (index, score) tuples
 
@@ -107,7 +107,7 @@ def main(args):
     df_clean.to_csv(args.output_csv, index=True)
 
     # save the summaries to a json file
-    df_clean.to_csv(args.output_json, orient='records', index=True)
+    df_clean.to_json(args.output_json, orient='records', lines=True)
 
     # save the tfidf_summary column to a text file
     summary_list = df_clean.tfidf_summary.str.replace('\n', ' ', regex=False).tolist()
@@ -127,7 +127,7 @@ if __name__ == "__main__":
     parser.add_argument(
         "--clean_csv", # This is the path to the csv with a clean column 
         type=str,
-        default="data/df_clean.csv",
+        default="data/df_clean.csv" #How are we generating this? We need to make that part of the process
     )
     parser.add_argument(
         "--output_csv", # This is where the new dataframe with a summaries column will be saved
