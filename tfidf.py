@@ -1,17 +1,16 @@
 import argparse
 import nltk
+from tqdm import tqdm
+nltk.download('stopwords')
 from nltk.corpus import stopwords
+nltk.download('wordnet')
 from nltk.corpus import wordnet
 from nltk import pos_tag
 from nltk.stem import WordNetLemmatizer
-
-# Download required NLTK data at module level after imports
-import re
-import pandas as pd
 from nltk.tokenize import regexp_tokenize, word_tokenize, RegexpTokenizer
+import pandas as pd
+import re
 
-nltk.download('stopwords')
-nltk.download('wordnet')
 from sklearn.feature_extraction.text import TfidfVectorizer
 
 
@@ -65,7 +64,7 @@ def sentence_value_creator(doc_sents: list, doc_vector, vectorizer) -> list: # L
             if word in vectorizer.vocabulary_: # If the word is in the TF-IDF vocabulary
                 vec_val = doc_vector[0, vectorizer.vocabulary_[word]] # Get the vector score from TF_IDF vectorizer
                 c += vec_val # Add the vector score to the total sentence score
-        score = float(c)/float(len(sent_split)) # Normalize for sentence length = c/sent_length
+        score = float(c)/float(len(sent_split)) if len(sent_split) != 0 else 0# Normalize for sentence length = c/sent_length
         sent_index_val_dict.append((i,score)) # Append a tuple of (index, score) for the sentence 
     return sent_index_val_dict # Return the list of sentence (index, score) tuples
 
@@ -85,7 +84,7 @@ def main(args):
     doc_summaries = [] # List to store the document summaries
     doc_list = df_clean.article.tolist() # List of all the docs in the article column
 
-    for doc_idx, doc in enumerate(doc_list): # For every document
+    for doc_idx, doc in tqdm(enumerate(doc_list), "Summarizing Documents"): # For every document
         no_parens = remove_between_parens(doc) # Remove citations and other parentheses from the document
         doc_sents = nltk.sent_tokenize(no_parens) # Split the document into sentences
         doc_length = len(doc_sents) # Get the total number of sentences in the document
@@ -108,7 +107,7 @@ def main(args):
     #df_clean.to_csv(args.output_csv, index=True)
 
     # save the summaries to a json file
-    df_clean.to_json(args.output_json, index=True)
+    df_clean.to_json(args.output_json, orient="records", lines=True)
 
     # save the tfidf_summary column to a text file
     summary_list = df_clean.tfidf_summary.str.replace('\n', ' ', regex=False).tolist()
@@ -146,6 +145,7 @@ if __name__ == "__main__":
 
 
     """
+
 python ./tfidf.py \
   --summary_percent .4 \
   --clean_csv data/0507_plos_clean_test.csv \
