@@ -1,10 +1,9 @@
 
 import argparse
-import os
 import random
 import torch
 import pandas as pd
-from datasets import load_dataset, DatasetDict, Dataset
+from datasets import DatasetDict, Dataset
 from transformers import (
     PegasusTokenizer,
     PegasusForConditionalGeneration,
@@ -31,7 +30,7 @@ def load_data(train_path, val_path):
 
 def preprocess_function(examples, tokenizer, max_input_length=512, max_target_length=200):
     model_inputs = tokenizer(
-        examples["article"], max_length=max_input_length, truncation=True, padding="max_length"
+        examples["tfidf_summary"], max_length=max_input_length, truncation=True, padding="max_length"
     )
     labels = tokenizer(
         examples["summary"], max_length=max_target_length, truncation=True, padding="max_length"
