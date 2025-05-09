@@ -103,7 +103,10 @@ def main(args):
     df_clean['tfidf_summary'] = doc_summaries
 
     # save the summaries to a csv file
-    df_clean.to_csv(args.output_csv, index=True)
+    #df_clean.to_csv(args.output_csv, index=True)
+
+    # save the summaries to a json file
+    df_clean.to_json(args.output_json, index=True)
 
     # save the tfidf_summary column to a text file
     summary_list = df_clean.tfidf_summary.str.replace('\n', ' ', regex=False).tolist()
@@ -126,9 +129,9 @@ if __name__ == "__main__":
         default="data/df_clean.csv",
     )
     parser.add_argument(
-        "--output_csv", # This is where the new dataframe with a summaries column will be saved
+        "--output_json", # This is where the new dataframe with a summaries column will be saved
         type=str,
-        default="data/summaries.csv"
+        default="data/summaries.json"
     )
     parser.add_argument(
         "--output_txt", #This is where the summaries will be saved to as a txt document
