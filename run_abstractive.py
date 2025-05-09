@@ -47,7 +47,7 @@ def generate_summaries(model_path, input_file, output_file, max_input_length=512
 
     # Save to output file
     with open(output_file, 'w') as output:
-        for summ in summaries:
+        for summ in tqdm(summaries, "Writing Summaries"):
             output.write(summ)
             output.write("\n\n")
     # df["generated_summary"] = summaries
