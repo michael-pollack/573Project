@@ -8,7 +8,6 @@ from nltk import pos_tag
 from nltk.stem import WordNetLemmatizer
 from nltk.tokenize import regexp_tokenize, word_tokenize, RegexpTokenizer
 import pandas as pd
-from tqdm import tqdm
 import re
 
 from sklearn.feature_extraction.text import TfidfVectorizer
@@ -50,7 +49,7 @@ def remove_between_parens(doc):
     doc = re.sub(r"\([^()]*\)|\[[^\]]*\]|\{[^}]*\}", "", doc)
     return doc
 
-def sentence_value_creator_2(doc_sents: list, vect_obj) -> list: # List of sentences in a document -> list of tuples (index, sum)
+def sentence_value_creator(doc_sents: list, doc_vector, vectorizer) -> list: # List of sentences in a document -> list of tuples (index, sum)
     """ 
     A function to take in a single article at a time, split the article by sentences, clean those sentences, split each sentence by words,
     match each word with its vector, sum the vectors and returns a list of tuples (sentence index, vector sums)
@@ -62,32 +61,13 @@ def sentence_value_creator_2(doc_sents: list, vect_obj) -> list: # List of sente
         sent_split = clean_sent.split() # Split sentence by words
         for word in sent_split: # For every word in the sentence
             if word in vectorizer.vocabulary_: # If the word is in the TF-IDF vocabulary
-                vec_val = vect_obj[i, vectorizer.vocabulary_[word]] # Get the vector score from TF_IDF vectorizer
+                vec_val = doc_vector[0, vectorizer.vocabulary_[word]] # Get the vector score from TF_IDF vectorizer
                 c += vec_val # Add the vector score to the total sentence score
-        sent_index_val_dict.append((i,float(c))) # Append a tuple of (index, score) for the sentence 
+        score = float(c)/float(len(sent_split)) # Normalize for sentence length = c/sent_length
+        sent_index_val_dict.append((i,score)) # Append a tuple of (index, score) for the sentence 
     return sent_index_val_dict # Return the list of sentence (index, score) tuples
 
-if __name__ == "__main__":
-    # argparse logic
-    parser = argparse.ArgumentParser()
-    parser.add_argument("--summary_percent", type=float, default=0.1) # This is the percent of the document that calculates the summary length
-    parser.add_argument(
-        "--clean_csv", # This is the path to the csv with a clean column 
-        type=str,
-        default="data/df_elife_train_clean.csv",
-    )
-    parser.add_argument(
-        "--output_csv", # This is where the new dataframe with a summaries column will be saved
-        type=str,
-        default="data/elife_summaries.csv"
-    )
-    parser.add_argument(
-        "--output_txt", #This is where the summaries will be saved to as a txt document
-        type=str,
-        default="data/elife_summaries.txt"
-    )
-    args = parser.parse_args()
-
+def main(args):
     df_clean = pd.read_csv(args.clean_csv) # Read the clean csv in as a pandas dataframe
 
     # Make the TF-IDF vectorizer
@@ -99,18 +79,17 @@ if __name__ == "__main__":
     # Calculate the TF-IDF score for unigrams and bigrams using the clean data
     vector_scores = vectorizer.fit_transform(clean_column)
 
-
     summary_percent = args.summary_percent # Percentage of total document sentences to save as the summary
     doc_summaries = [] # List to store the document summaries
     doc_list = df_clean.article.tolist() # List of all the docs in the article column
 
-
-    for doc in tqdm(doc_list, "Summarizing documents"): # For every document
+    for doc_idx, doc in enumerate(doc_list): # For every document
         no_parens = remove_between_parens(doc) # Remove citations and other parentheses from the document
         doc_sents = nltk.sent_tokenize(no_parens) # Split the document into sentences
         doc_length = len(doc_sents) # Get the total number of sentences in the document
         top_num = int(summary_percent * doc_length) # Calculate the number of sentences to keep for the summary
-        sent_scores = sentence_value_creator_2(doc_sents, vector_scores) # Get list of (index, score) pairs for all the document sentences
+        doc_vector = vector_scores[doc_idx]
+        sent_scores = sentence_value_creator(doc_sents, doc_vector, vectorizer) # Pass vectorizer as argument and Get list of (index, score) pairs for all the document sentences
         sorted_scores = sorted(sent_scores, key=lambda x: x[1]) # Sort based on second tuple object; sort by score
         sorted_scores = sorted_scores[-top_num:] # Crop to just the top top_num sents
         sorted_sents = sorted(sorted_scores, key = lambda x: x[0]) # Sort the top sents by index so they are in the logical order
@@ -127,12 +106,45 @@ if __name__ == "__main__":
     df_clean.to_csv(args.output_csv, index=True)
 
     # save the tfidf_summary column to a text file
-    with open('data/elife_summaries.txt', 'w') as f:
-        for summary in df_clean['tfidf_summary']:
-            f.write(summary + '\n')
+    summary_list = df_clean.tfidf_summary.str.replace('\n', ' ', regex=False).tolist()
 
-    summary_list = df_clean.tfidf_summary.tolist()
+    with open(args.output_txt, 'w') as f:
+        for summary in summary_list:
+            f.write(summary + '\n')
     
-    with open('elife_summaries.txt', 'w') as f:
-        for summ in summary_list:
-            f.write(summ.replace('\n','') + '\n')
+    # with open('summaries.txt', 'w') as f:
+    #     for summ in summary_list:
+    #         f.write(summ.replace('\n','') + '\n')
+
+if __name__ == "__main__":
+    # argparse logic
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--summary_percent", type=float, default=0.4) # This is the percent of the document that calculates the summary length
+    parser.add_argument(
+        "--clean_csv", # This is the path to the csv with a clean column 
+        type=str,
+        default="data/df_clean.csv",
+    )
+    parser.add_argument(
+        "--output_csv", # This is where the new dataframe with a summaries column will be saved
+        type=str,
+        default="data/summaries.csv"
+    )
+    parser.add_argument(
+        "--output_txt", #This is where the summaries will be saved to as a txt document
+        type=str,
+        default="data/summaries.txt"
+    )
+    args = parser.parse_args()
+
+    main(args)
+
+
+    """
+python /home/jen/573Project-1/tfidf.py \
+  --summary_percent .4 \
+  --clean_csv data/0507_plos_clean_test.csv \
+  --output_csv data/0507_plos_clean_test.csv \
+  --output_txt data/0507_plos_clean_test.txt
+
+    """
