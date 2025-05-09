@@ -1,5 +1,6 @@
 import argparse
 import nltk
+import tqdm
 nltk.download('stopwords')
 from nltk.corpus import stopwords
 nltk.download('wordnet')
@@ -83,7 +84,7 @@ def main(args):
     doc_summaries = [] # List to store the document summaries
     doc_list = df_clean.article.tolist() # List of all the docs in the article column
 
-    for doc_idx, doc in enumerate(doc_list): # For every document
+    for doc_idx, doc in tqdm(enumerate(doc_list), "Summarizing Documents"): # For every document
         no_parens = remove_between_parens(doc) # Remove citations and other parentheses from the document
         doc_sents = nltk.sent_tokenize(no_parens) # Split the document into sentences
         doc_length = len(doc_sents) # Get the total number of sentences in the document
@@ -104,6 +105,9 @@ def main(args):
 
     # save the summaries to a csv file
     df_clean.to_csv(args.output_csv, index=True)
+
+    # save the summaries to a json file
+    df_clean.to_csv(args.output_json, orient='records', index=True)
 
     # save the tfidf_summary column to a text file
     summary_list = df_clean.tfidf_summary.str.replace('\n', ' ', regex=False).tolist()
@@ -129,6 +133,11 @@ if __name__ == "__main__":
         "--output_csv", # This is where the new dataframe with a summaries column will be saved
         type=str,
         default="data/summaries.csv"
+    )
+    parser.add_argument(
+        "--output_json", # This is where the new dataframe with a summaries column will be saved
+        type=str,
+        default="data/summaries.json"
     )
     parser.add_argument(
         "--output_txt", #This is where the summaries will be saved to as a txt document
