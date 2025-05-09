@@ -126,17 +126,17 @@ if __name__ == "__main__":
     parser.add_argument(
         "--clean_csv", # This is the path to the csv with a clean column 
         type=str,
-        default="data/df_clean.csv",
+        default="data/df_elife_train_clean.csv",
     )
     parser.add_argument(
         "--output_json", # This is where the new dataframe with a summaries column will be saved
         type=str,
-        default="data/summaries.json"
+        default="data/elife_train_summaries.json"
     )
     parser.add_argument(
         "--output_txt", #This is where the summaries will be saved to as a txt document
         type=str,
-        default="data/summaries.txt"
+        default="data/elife_train_summaries.txt"
     )
     args = parser.parse_args()
 

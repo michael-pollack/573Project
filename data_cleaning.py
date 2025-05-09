@@ -52,12 +52,12 @@ if __name__ == "__main__":
     parser.add_argument(
         "--parquet_path", # This is the path to the parquet data file
         type=str,
-        #default="data/Elife/train-00000-of-00001.parquet",
+        default="data/Elife/train-00000-of-00001.parquet",
     )
     parser.add_argument(
         "--output_csv", # This is where the clean dataframe will be saved
         type=str,
-        #default="data/df_elife_train_clean.csv"
+        default="data/df_elife_train_clean.csv"
     )
     args = parser.parse_args()
 
