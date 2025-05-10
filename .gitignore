@@ -6,3 +6,4 @@ pegasus_large_model/
 pegasus_large_model_x2/
 *.txt
 evaluation_results.csv
+*.bin
