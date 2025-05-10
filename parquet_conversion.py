@@ -28,4 +28,11 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+    """
+    python parquet_conversion.py --input data/PLOS --output data/PLOS_json
+
+    python parquet_conversion.py --input data/Elife --output data/elife_json
+
+    """
     
