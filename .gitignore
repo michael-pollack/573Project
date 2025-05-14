@@ -1,5 +1,8 @@
 data/
 Cell output 39 \[DW].csv
 project copy.ipynb
+elife.txt
+pegasus_large_model/
+pegasus_large_model_x2/
 *.txt
 evaluation_results.csv
