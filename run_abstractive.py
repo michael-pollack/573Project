@@ -2,7 +2,7 @@
 import argparse
 import torch
 import pandas as pd
-import tqdm
+from tqdm import tqdm
 from transformers import PegasusTokenizer, AutoModelForSeq2SeqLM
 
 def generate_summaries(model_path, input_file, output_file, max_input_length=512, max_output_length=128):
