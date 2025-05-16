@@ -102,6 +102,10 @@ if __name__ == "__main__":
         "--output_json", # This is the path to the output
         type=str
     )
+    parser.add_argument(
+        "--output_txt", # Path to the text file to save the final summaries to
+        type=str
+    )
     args = parser.parse_args()
 
     # Read the summaries, skip_phrases, and layterm_dictionary as dataframes
@@ -135,3 +139,9 @@ if __name__ == "__main__":
 
     summary_df['final_summary'] = final_summaries # Add final summaries as a column in the df
     summary_df.to_json(args.output_json, orient="records", lines=True) # Save df to the output_json?
+
+    summary_list = summary_df.final_summary.str.replace('\n', ' ', regex=False).tolist()
+
+    with open(args.output_txt, 'w') as f:
+        for summary in summary_list:
+            f.write(summary + '\n')
