@@ -22,12 +22,19 @@ def generate_summaries(model_path, input_file, output_file, max_input_length=512
 
     # Load input articles
     # df = pd.read_json(input_file, lines=True)
-    with open(input_file, 'r') as input:
-        inputs = input.readlines()
+    # with open(input_file, 'r') as input:
+    #     inputs = input.readlines()
+
+        # Load input articles from JSON file
+    df = pd.read_json(input_file, lines=True)
+    if "article" in df.columns:
+        inputs = df["article"].tolist()
+    else:
+        raise ValueError("Input JSON must contain an 'article' column.")
     
     # Generate summaries
     summaries = []
-    for text in tqdm(inputs, "Processing Inputs"):
+    for text in tqdm.tqdm(inputs, desc="Processing Inputs"):
         inputs_tokenized = tokenizer(
             text,
             return_tensors="pt",
@@ -53,9 +60,9 @@ def generate_summaries(model_path, input_file, output_file, max_input_length=512
 
     # Save to output file
     with open(output_file, 'w') as output:
-        for summ in tqdm(summaries, "Writing Summaries"):
+        for summ in tqdm.tqdm(summaries, desc="Writing Summaries"):
             output.write(summ)
-            output.write("\n\n")
+            output.write("\n")
     # df["generated_summary"] = summaries
     # df.to_json(output_file, orient="records", lines=True)
     print(f"Summaries written to {output_file}")
@@ -71,8 +78,13 @@ if __name__ == "__main__":
 
     """
     python run_abstractive.py \
-  --model_path ./pegasus_large_model \
-  --input_file data/test_articles.txt \
-  --output_file data/generated_summaries.txt
+  --model_path ./pegasus_xsum \
+  --input_file data/elife_json/test-00000-of-00001.json \
+  --output_file data/generated_elife_summaries.txt
+
+    python run_abstractive.py \
+  --model_path ./pegasus_xsum \
+  --input_file data/PLOS_json/test-00000-of-00001.json \
+  --output_file data/generated_plos_summaries.txt
 
     """
