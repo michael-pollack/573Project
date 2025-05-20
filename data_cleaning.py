@@ -87,6 +87,6 @@ if __name__ == "__main__":
 
     """
     python /home/jen/573Project-1/data_cleaning.py   \
-    --parquet_path data/PLOS/test-00000-of-00001.parquet   \
-    --output_csv data/0507_plos_clean_test.csv
+    --parquet_path data/Elife/validation-00000-of-00001.parquet  \
+    --output_csv data/validation/elife_clean_test.csv
     """
