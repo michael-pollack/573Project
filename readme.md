@@ -31,6 +31,12 @@ https://huggingface.co/datasets/BioLaySumm/BioLaySumm2025-PLOS/tree/main/data
 
 https://huggingface.co/datasets/BioLaySumm/BioLaySumm2025-eLife/tree/main/data
 
+# Data Preparation
+
+data_cleaning.py
+
+tfidf.py
+
 # Training the model
 We have included a script that runs our full training pipeline from start to finish. Please call training_pipeline.sh specifying your training files and your validation files in the following manner:
 
