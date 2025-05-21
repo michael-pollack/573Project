@@ -6,7 +6,7 @@ nltk.download('wordnet')
 from nltk.corpus import wordnet
 from nltk import pos_tag
 from nltk.stem import WordNetLemmatizer
-from nltk.tokenize import regexp_tokenize, word_tokenize, RegexpTokenizer
+from nltk.tokenize import RegexpTokenizer #regexp_tokenize, word_tokenize, 
 import pandas as pd
 import re
 
