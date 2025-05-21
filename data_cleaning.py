@@ -109,4 +109,9 @@ if __name__ == "__main__":
     --parquet_path data/PLOS/validation-00000-of-00001.parquet  \
     --output_csv data/validation/plos_clean.csv \
     --num_lines 10
+
+    python /home/jen/573Project-1/data_cleaning.py   \
+    --parquet_path data/Elife/validation-00000-of-00001.parquet  \
+    --output_csv validation/elife_clean.csv \
+    --num_lines 100
     """
