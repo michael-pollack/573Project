@@ -149,16 +149,16 @@ if __name__ == "__main__":
 
 """
 python summarize_hf.py \
-  --input_file data/Elife/converted/elife.json \
+  --input_file data/validation/elife_clean_val.json \
   --text_column article \
-  --output_file elife.txt
+  --output_file data/results/elife.txt
     \
   --plain_language
 
  python summarize_hf.py \
-  --input_file data/PLOS/converted/plos.json \
+  --input_file data/validation/plos_clean_val.json \
   --text_column article \
-  --output_file plos.txt
+  --output_file data/results/plos.txt
     \
   --plain_language
   

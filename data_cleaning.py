@@ -59,20 +59,32 @@ if __name__ == "__main__":
         type=str,
         default="data/df_elife_train_clean.csv"
     )
+    parser.add_argument(
+        "--num_lines", # Number of lines to process (default: all)
+        type=int,
+        default=None
+    )
     args = parser.parse_args()
-
 
     orig_df = pd.read_parquet(args.parquet_path)
 
-    # code to remove documents of more than 11000 words
-    new_df = orig_df[orig_df['article'].str.len() < 110000 ]
-    print(new_df.shape)
-    articles_no_outliers = new_df.article.tolist()
-    print(len(articles_no_outliers))
+    # If num_lines is set, select only the first num_lines rows
+    if args.num_lines is not None:
+        new_df = orig_df.head(args.num_lines).copy()
+    else:
+        new_df = orig_df.copy()
 
-    #r un data through data parens cleaning function
+    # code to remove documents of more than 11000 words
+    # new_df = orig_df[orig_df['article'].str.len() < 110000 ]
+    # print(new_df.shape)
+    # articles = new_df.article.tolist()
+    # print(len(articles))
+
+    articles = new_df['article'].tolist()
+
+    # run data through data parens cleaning function
     no_parens_corpus = []
-    for doc in articles_no_outliers:
+    for doc in articles:
         no_parens_corpus.append(remove_between_parens(doc))
     print("done cleaning parentheses")
 
@@ -83,10 +95,18 @@ if __name__ == "__main__":
     print("done cleaning data")
     new_df['clean'] = clean_corpus
 
-    new_df.to_csv(args.output_csv, index=True)
+    if '.' in args.output_csv:
+        name, ext = args.output_csv.rsplit('.', 1)
+    else:
+        name, ext = args.output_csv, ''
+
+    filename = f"{name}_{args.num_lines}.{ext}"
+
+    new_df.to_csv(filename, index=True)
 
     """
     python /home/jen/573Project-1/data_cleaning.py   \
-    --parquet_path data/Elife/validation-00000-of-00001.parquet  \
-    --output_csv data/validation/elife_clean_test.csv
+    --parquet_path data/PLOS/validation-00000-of-00001.parquet  \
+    --output_csv data/validation/plos_clean.csv \
+    --num_lines 10
     """

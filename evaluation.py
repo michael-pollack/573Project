@@ -9,8 +9,6 @@ from evaluate import load
 import pandas as pd
 import argparse
 
-
-
 def evaluate_generated_texts(generated_path, reference_path, output_csv=None, rouge=None, bleu=None, bertscore=None, meteor=None, summaC=None):
     # Read text files
     with open(generated_path, "r", encoding="utf-8") as f:
@@ -86,11 +84,16 @@ def main():
     # Print the DataFrame
     print(df)
 
+    # Print average scores
+    avg_scores = df.drop(columns=["ID"]).mean(numeric_only=True)
+    print("\nAverage Scores Across All Summaries:")
+    print(avg_scores)
+
 if __name__ == "__main__":
     main()
 
 
     """
-    python evaluation.py data/test_generated_text.txt data/test_reference_text.txt --output_csv results.csv
+    python evaluation.py data/validation/plos_clean_10.txt data/validation/valdiation_plos_summaries_10.txt --output_csv results.csv
 
     """

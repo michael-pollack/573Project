@@ -122,6 +122,24 @@ if __name__ == "__main__":
     max_prev_skip = len(max(prev_skip_phrases, key=len)) # Get max length of prev_phrase
 
     # ADD CODE TO MAKE TERM_DICT FROM DATAFRAME
+    lexicon_df = pd.read_csv('lexicon.csv') #read in lexicon csv
+    lexicon_df_clean = lexicon_df.drop(['Lemma', 'POS', 'bib_num'], axis = 1) #drop uneeded columns
+    df_lexicon_clean = lexicon_df_clean.dropna() #drop extra rows
+    med_terms = df_lexicon_clean['Forms'].tolist() #get list of med terms
+    lemmatizer = WordNetLemmatizer() #make lemmatizer
+    lemma_list = []
+    for term in med_terms:
+        lemma_list.append(lemmatizer.lemmatize(term)) #lemmatize all med words
+    check = pd.Series(lemma_list) 
+    df_lexicon_clean['lemma'] = check.values #add lemmas back to df
+    tup_obj = list(zip(df_lexicon_clean['layman'], df_lexicon_clean['Tag'], df_lexicon_clean['lemma'])) #make a tuple object in the form of (layman term, POS tag, lemma)
+    term_dict = {}
+    for tup in tup_obj:#create dict
+        if tup[2] not in term_dict:
+            term_dict[tup[2]] = [(tup[0], tup[1])]
+        else:
+            term_dict[tup[2]].append((tup[0], tup[1]))
+    
     
     og_summ_list = summary_df.summary.tolist() # Get just the summaries from the previous dataframe
     layterm_summaries = [] # Save the replaced summaries

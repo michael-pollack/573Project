@@ -148,8 +148,14 @@ if __name__ == "__main__":
 
 python ./tfidf.py \
   --summary_percent .4 \
-  --clean_csv data/0507_plos_clean_test.csv \
-  --output_csv data/0507_plos_clean_test.csv \
-  --output_txt data/0507_plos_clean_test.txt
+  --clean_csv data/validation/elife_clean.csv \
+  --output_json data/validation/elife_clean_val.json\
+  --output_txt data/validation/elife_clean.txt
+
+  python ./tfidf.py \
+  --summary_percent .4 \
+  --clean_csv data/validation/plos_clean_10.csv \
+  --output_json data/validation/plos_clean_val_10.json\
+  --output_txt data/validation/plos_clean_10.txt
 
     """
