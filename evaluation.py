@@ -94,6 +94,7 @@ if __name__ == "__main__":
 
 
     """
-    python evaluation.py data/validation/plos_clean_10.txt data/validation/valdiation_plos_summaries_10.txt --output_csv results.csv
+    python evaluation.py validation/plos_clean_10.txt validation/valdiation_plos_summaries_10.txt --output_csv results.csv
+    python evaluation.py validation/elife_clean_val_100.txt validation/elife_val_100.txt --output_csv results_elife.csv
 
     """

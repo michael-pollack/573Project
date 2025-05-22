@@ -1,7 +1,6 @@
 import pandas as pd
 import argparse
 from transformers import pipeline
-from time import sleep
 import tqdm
 import torch
 import time
@@ -149,9 +148,9 @@ if __name__ == "__main__":
 
 """
 python summarize_hf.py \
-  --input_file data/validation/elife_clean_val.json \
+  --input_file validation/elife_clean_val_100.json \
   --text_column article \
-  --output_file data/results/elife.txt
+  --output_file data/results/elife_100.txt
     \
   --plain_language
 
