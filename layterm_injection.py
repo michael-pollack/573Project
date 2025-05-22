@@ -95,10 +95,6 @@ if __name__ == "__main__":
         type=str
     )
     parser.add_argument(
-        "--dictionary_csv", # This is the csv of layterm dictionary terms
-        type=str
-    )
-    parser.add_argument(
         "--output_json", # This is the path to the output
         type=str
     )
