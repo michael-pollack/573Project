@@ -148,9 +148,9 @@ if __name__ == "__main__":
 
 python ./tfidf.py \
   --summary_percent .4 \
-  --clean_csv validation/elife_clean_100.csv\
-  --output_json validation/elife_clean_val_100.json\
-  --output_txt validation/elife_clean_val_100.txt
+  --clean_csv validation/elife_clean_50.csv\
+  --output_json validation/elife_clean_tfidf_val_50.json\
+  --output_txt validation/elife_clean_tfidf_val_50.txt
 
   python ./tfidf.py \
   --summary_percent .4 \

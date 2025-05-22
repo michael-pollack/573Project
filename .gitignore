@@ -37,3 +37,7 @@ data/PLOS/clean_staged/train-00001-of-00003_clean.json
 data/PLOS/clean_staged/train-00002-of-00003_clean.json
 data/PLOS/clean_staged/validation-00000-of-00001_clean.json
 validation/elife_clean_100.csv
+validation/elife_clean_50.csv
+validation/elife_clean_tfidf_val_50.json
+validation/elife_clean_tfidf_val_50.txt
+validation/elife_val_50.txt

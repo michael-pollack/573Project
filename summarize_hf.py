@@ -148,9 +148,9 @@ if __name__ == "__main__":
 
 """
 python summarize_hf.py \
-  --input_file validation/elife_clean_val_100.json \
+  --input_file validation/elife_clean_tfidf_val_50.json \
   --text_column article \
-  --output_file data/results/elife_100.txt
+  --output_file data/results/elife_generated_summaries_50.txt
     \
   --plain_language
 
