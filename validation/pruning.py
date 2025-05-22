@@ -40,9 +40,9 @@ print(f"Saved first {args.num_lines} lines to {filename}")
 
 """
 elife example:
-python data/validation/pruning.py --input data/validation/validation_elife_summaries.txt --output data/validation/elife_val.txt --num_lines 10
+python validation/pruning.py --input validation/validation_elife_summaries.txt --output validation/elife_val.txt --num_lines 100
 
 plos example:
-python data/validation/pruning.py --input data/validation/validation_plos_summaries.txt --output data/validation/valdiation_plos_summaries.txt --num_lines 10
+python validation/pruning.py --input validation/validation_plos_summaries.txt --output validation/valdiation_plos_summaries.txt --num_lines 10
 
 """

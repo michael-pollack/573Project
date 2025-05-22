@@ -7,7 +7,7 @@ nltk.download('wordnet')
 from nltk.corpus import wordnet
 from nltk import pos_tag
 from nltk.stem import WordNetLemmatizer
-from nltk.tokenize import regexp_tokenize, word_tokenize, RegexpTokenizer
+from nltk.tokenize import RegexpTokenizer #regexp_tokenize, word_tokenize, 
 import pandas as pd
 import re
 
@@ -148,9 +148,9 @@ if __name__ == "__main__":
 
 python ./tfidf.py \
   --summary_percent .4 \
-  --clean_csv data/validation/elife_clean.csv \
-  --output_json data/validation/elife_clean_val.json\
-  --output_txt data/validation/elife_clean.txt
+  --clean_csv validation/elife_clean_100.csv\
+  --output_json validation/elife_clean_val_100.json\
+  --output_txt validation/elife_clean_val_100.txt
 
   python ./tfidf.py \
   --summary_percent .4 \
