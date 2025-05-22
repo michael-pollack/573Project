@@ -5,7 +5,7 @@ import pandas as pd
 from tqdm import tqdm
 from transformers import PegasusTokenizer, AutoModelForSeq2SeqLM
 
-def generate_summaries(model_path, input_file, output_file, max_input_length=512, max_output_length=128):
+def generate_summaries(model_path: str, input_file: str, output_file: str, max_input_length: int=512, max_output_length: int=128) -> None:
     # Load model and tokenizer
     tokenizer = PegasusTokenizer.from_pretrained(model_path, use_fast=False)
     model = AutoModelForSeq2SeqLM.from_pretrained(model_path)
@@ -42,7 +42,7 @@ def generate_summaries(model_path, input_file, output_file, max_input_length=512
                 early_stopping=True
             )
 
-        summary = tokenizer.decode(output_ids[0], skip_special_tokens=True)
+        summary = trim(tokenizer.decode(output_ids[0], skip_special_tokens=True))
         summaries.append(summary)
 
     # Save to output file
@@ -53,6 +53,12 @@ def generate_summaries(model_path, input_file, output_file, max_input_length=512
     # df["generated_summary"] = summaries
     # df.to_json(output_file, orient="records", lines=True)
     print(f"Summaries written to {output_file}")
+
+def trim(summary: str) -> str:
+    summ = list(summary)
+    while summ[-1] != '.' or summ[-2] == 'al':
+        summ.pop()
+    return ''.join(summ)
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()

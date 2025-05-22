@@ -31,11 +31,21 @@ https://huggingface.co/datasets/BioLaySumm/BioLaySumm2025-PLOS/tree/main/data
 
 https://huggingface.co/datasets/BioLaySumm/BioLaySumm2025-eLife/tree/main/data
 
-# Data Preparation
+# Important Files and Their Purpose
 
-data_cleaning.py
+data_cleaning.py - cleans and tokenizes the data so that it can be processed by subsequent files.
 
-tfidf.py
+tfidf.py - performs TF-IDF extraction on articles to create our base extractive summaries.
+
+fine_tune_abstractive.py - uses extractive summaries paired with gold standard abstractive summaries to train a pegasus-large-model for abstractive summarization.
+
+run_abstractive.py - runs the fine-tuned model on test summaries to generate abstractive summaries.
+
+layterm_injection.py - performs lay-term injections on abstractive summaries to replace any remaining jargon.
+
+evaluation.py - runs evaluation metrics on abstractive summaries.
+
+summarize_hf.py - work-around for run_abstractive.py that uses a Hugging Face model instead of a locally trained one in order to conserve local computing resources.
 
 
 # Training the model
