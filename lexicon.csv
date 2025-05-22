@@ -1,0 +1,894 @@
+Lemma,Forms,layman,POS,Tag,bib_num
+abdomen,abdomen,stomach,noun sing,NN,2
+abdomen,abdomens,stomachs,noun pl,NNS,2
+abrasion,abrasion,scrape,noun,NN,1
+abrasion,abrasions,scrapes,noun plural,NNS,1
+abscess,abscess,accumulation of pus in the body,noun sing,NN,1
+abscess,abscesses,a lot of buildups of pus in the body,noun pl,NNS,1
+abscess,abscessed,accumulated pus in the body,verb past tense,VBD,1
+abscess,abscessing,accumulating pus in the body,verb gerund,VBG,1
+abscess,abscesses,accumulates pus in the body,verb 3rd sing present,VBZ,1
+abscess,abscess,accumulate pus in the body,verb non3rd sing present,VBP,1
+abscess,abscesses,accumulates pus in the body,verb pp,VBN,1
+abscess,abscess,accumulate pus in the body,verb inf,VB,1
+absorb,absorb,accumulate fluid,verb non3rd sing present,VBP,2
+absorb,absorbs,accumulates fluid,verb 3rd sing present,VBZ,2
+absorb,absorbed,accumulated fluid,verb past tense,VBD,2
+absorb,absorbing,accumulating fluid,verb gerund,VBG,2
+absorb,absorb,accumulate fluid,inf,VB,2
+absorb,absorbed,accumulated fluid,verb pp,VBN,2
+absorb,absorbent ,accumulative of fluid,adj,JJ,2
+acidosis,acidosis,acidic blood,noun,NN,2
+acute,acute,sudden,adjective,JJ,1
+acute,acutely,suddenly,adverb,RB,1
+adenopathy,adenopathy,inflammation of lymph nodes,noun,NN,2
+analgesic,analgesic,agent for pain-relieving,noun,NN,2
+analgesic,analgesic,effective for relieving pain,adj,JJ,2
+anemia,anemia,insufficient number of red blood cells,noun,NN,2
+anemia,anemic,ill because of a low number of red blood cells,adj,JJ,2
+anemia,anemically,energy deficiently due to low red blood cell count,adverb,RB,2
+antimicrobial,antimicrobial,agent that kills bacteria and other germs,noun,NN,2
+antimicrobial,antimicrobial,capable of destroying or preventing growth of bacteria and other germs,adj,JJ,2
+benign,benign,not cancerous,adjective,JJ,1
+biopsy,biopsy,procedure to test tissue,noun,NN,1
+biopsy,biopsies,procedures to test tissue,noun plural,NNS,1
+biopsy,biopsy,test tissue,verb non3rd sing present,VBP,1
+biopsy,biopsises,tests tissue,verb 3rd sing present,VBZ,1
+biopsy,biopsied,tested tissue,verb past tense,VBD,1
+biopsy,biopsing,testing tissue,verb gerund,VBG,1
+biopsy,biopsy,test tissue,inf,VB,1
+biopsy,biospied,tested tissue,verb pp,VBN,1
+carcinogen,carcinogen,cancer,noun,NN,2
+carcinogen,carcinogenic,cancerous,adj,JJ,2
+cardio,cardiac,related to the heart,adj,JJ,2
+cardio,cardio,heart and blood vessels,noun,NN,2
+chronic,chronic,recurring and persistant,adjective,JJ,1
+chronic,chronically,recurringly and persistantly,adverb,RB,1
+chronic,chronic,continuing for a long time,adj,JJ,2
+chronic,chronically,continuing  in a persistent or reoccuring way,adverb,RB,2
+contusion,contusion,bruise,noun sing,NN,1
+contusion,contusions,bruises,noun plural,NNS,1
+debilitate,debilitates,make someone or something weak,verb 3rd sing present,VBZ,2
+debilitate,debilitate,make someone or something weak,verb non3rd sing present,VBP,2
+debilitate,debilitating,making someone or something weak,adj,JJ,2
+debilitate,debilitation,weakened condition,noun,NN,2
+debilitate,debilitated,put in a very weakened state,verb past tense,VBD,2
+debilitate,debilitated,weakened,adj,JJ,2
+debilitate,debilitatingly,severly weakening or impairing strength or ability,adverb,RB,2
+defibrillator,defibrillator,device for electric shock,noun,NN,1
+defibrillator,defibrillators,devices for electric shock,noun plural,NNS,1
+defibrillator,defibrillate,shock,verb non3rd sing present,VBP,1
+defibrillator,defibrillates,shocks,verb 3rd sing present,VBZ,1
+defibrillator,defibrillated,shocked,verb past tense,VBD,1
+defibrillator,defibrillating,shocking,verb gerund,VBG,1
+defibrillator,defibrillate,shock,inf,VB,1
+defibrillator,defibrillated,shocked,verb pp,VBN,1
+edema,edema,instance of swollen tissue caused by fluid accumulation,noun,NN,1
+edema,edemas,instances of swollen tissue casued by fluid accumulation,noun plural,NNS,1
+embolism,embolism,blocked artery,noun,NN,1
+embolism,embolisms,blocked arteries,noun plural,NNS,1
+epidermis,epidermis,top layer of skin,noun,NN,1
+epidermis,epidermises,top layers of skin,noun plural,NNS,1
+epidermis,epidermal,top layer of skin,adjective,JJ,1
+excrete,excrete,discharge,verb non3rd sing present,VBP,2
+excrete,excretes,discharges,verb 3rd sing present,VBZ,2
+excrete,excreted,discharged,verb past tense,VBD,2
+excrete,excretion,waste product from the body,noun,NN,2
+excrete,excretions,waste products from the body,noun pl,NNS,2
+fracture,fracture,broken bone,noun,NN,1
+fracture,fractures,broken bones,noun plural,NNS,1
+fracture,fracture,break,verb non3rd sing present,VBP,1
+fracture,fractures,breaks,verb 3rd sing present,VBZ,1
+fracture,fractured,broke,verb past tense,VBD,1
+fracture,fracturing,breaking,verb gerund,VBG,1
+fracture,fracture,break,inf,VB,1
+fracture,fractured,broke,verb pp,VBN,1
+gait,gait,walk,noun,NN,2
+gland,gland,tissue that secretes fluid,noun,NN,1
+gland,glands,tissues that secrete fluids,noun plural,NNS,1
+hematocrit,hematocrit,large amount of red blood cells in the blood,noun,NN,2
+hematoma,hematoma,blood clot,noun,NN,2
+hematuria,hematuria,blood in urine,noun,NN,2
+hemorrhage,hemorrhage,heavy loss of blood,noun,NN,2
+hemorrhage,hemorrhaging,heavily losing blood,verb gerund,VBG,2
+hemorrhage,hemorrhaged,having lost a lot of blood,verb past tense,VBD,2
+hepatoma,hepatoma,liver cancer,noun,NN,2
+hypertension,hypertension,high blood pressure,noun,NN,1
+hysterectomy,hysterectomy,removal of the uterus and ovaries,noun,NN,2
+idiopathic,idiopathic,by an unknown cause,adj,JJ,2
+inpatient,inpatient,patient who requires hospitalization,noun,NN,1
+inpatient,inpatients,patients who requires hospitalization,noun plural,NNS,1
+inpatient,inpatient,hospitalization,adjective,JJ,1
+intravenous,intravenous,in vein,adjective,JJ,1
+intravenous,intravenously,in vein,adverb,RB,1
+malignant,malignant,cancerous,adjective,JJ,1
+outpatient,outpatient,individual who does not require hospitalization,noun sing,NN,1
+outpatient,outpatients,individuals who do not require hospitalization ,noun pl,NNS,1
+outpatient,outpatient,out of hospital,adjective,JJ,1
+prognosis,prognosis,predicted outcome of issue progression and treatment,noun sing,NN,1
+prognosis,prognoses,predicted outcomes of issue progression and treatment,noun pl,NNS,1
+psychosis,psychosis,nervous breakdown,noun sing,NN,2
+pulmonary,pulmonary,related to the lungs,adj,JJ,2
+refractor,refractory,resistant to treatment,adj,JJ,2
+regimen,regimen,pattern of given treatments,noun sing,NN,2
+regimen,regimens,patterns of given treatments,noun plural,NNS,2
+relapse,relapse,return of disease or symptoms after recovery,noun,NN,1
+relapse,relapses,return of diseases or symptoms after recovery,noun plural,NNS,1
+relapse,relapse,have a return of diseases or symptoms after recovery,verb non3rd sing present,VBP,1
+relapse,relapses,has a return of diseases or symptoms after recovery,verb 3rd sing present,VBZ,1
+relapse,relapsed,had a return of diseases or symptoms after recovery,verb past tense,VBD,1
+relapse,relapsing,having a return of diseases or symptoms after recovery,verb gerund,VBG,1
+relapse,relapse,have a return of diseases or symptoms after recovery,inf,VB,1
+relapse,relapsed,had a return of diseases or symptoms after recovery,verb pp,VBN,1
+relapse,relapse,return of a disease,noun sing,NN,2
+relapse,relapses,reoccurences of a disease,noun plural,NNS,2
+remission,remission,lack of evidence of cancer,noun sing,NN,2
+remunerate,remuneration,payment for participation in research,noun sing,NN,2
+remunerate,renumerations,payments for participation in research,noun plural,NNS,2
+remunerate,remunerate,pay for participation in research,verb non3rd sing present,VBP,2
+remunerate,remunerates,pays for participation in research,verb 3rd sing present,VBZ,2
+remunerate,remunerated,payed for participation in research,verb past tense,VBD,2
+remunerate,remunerating,paying for participation in research,verb gerund,VBG,2
+remunerate,remunerate,pay for participation in research,inf,VB,2
+remunerate,remunerated,payed for participation in research,verb pp,VBN,2
+renal,renal,kidney,adj,JJ,2
+resect,resection,surgical removal,noun,NN,2
+resect,resections,surgical removals,noun plural,NNS,2
+resect,resect,surgically cut out,verb non3rd sing present,VBP,2
+resect,resects,surgically cuts out,verb 3rd sing present,VBZ,2
+resect,resected,surgically cut out,verb past tense,VBD,2
+resect,resecting,surgically cutting out,verb gerund,VBG,2
+resect,resect,surgically cut out,inf,VB,2
+resect,resected,surgically cut out,verb pp,VBN,2
+rhabdomylosis,rhabdomylosis,breakdown of muscle fibers,noun sing,NN,2
+rigors,rigors,chills and shivering,noun plural,NNS,2
+saline,saline,salt water solution,adj,JJ,2
+sarcoma,sarcoma,type of cancer,noun,NN,2
+sarcoma,sarocomas,types of cancer,noun plural,NNS,2
+secrete,secretion,fluid release,noun,NN,2
+secrete,secretions,fluid releases,noun plural,NNS,2
+secrete,secrete,release fluid,verb non3rd sing present,VBP,2
+secrete,secretes,releases fluid,verb 3rd sing present,VBZ,2
+secrete,secreted,released fluid,verb past tense,VBD,2
+secrete,secreting,releasing fluid,verb gerund,VBG,2
+secrete,secrete,release fluid,inf,VB,2
+secrete,secreted,released fluid,verb pp,VBN,2
+sedative,sedative,drug to calm,noun sing,NN,2
+sedative,sedatives,drugs to calm,noun plural,NNS,2
+seminoma,seminoma,testicular cancer,noun sing,NN,2
+seminoma,seminomata,testicular cancers,noun plural,NNS,2
+somnolence,somnolence,sleepiness,noun sing,NN,2
+spirometer,spirometer,tool to measure the amount of air taken into and exhaled from the lungs,noun,NN,2
+spirometer,spirometers,"tools to measure the amount of air taken into and
+exhaled from the lungs",noun plural,NNS,2
+stenosis,stenosis,narrowing of a blood vessel,noun,NN,2
+stomatitis,stomatitis,swelling of the mouth,noun,NN,2
+stupor,stupor,dazed and unresponsive state,noun,NN,2
+stupor,stupors,dazed and unresponsive states,noun plural,NNS,2
+subclavian,subclavian,found under the collarbone,adj,JJ,2
+subclavian,subclavical,found under the collarbone,adv,RB,2
+subcutaneous,subcutaneous,found under the skin,adj,JJ,2
+subcutaneous,subcutaneously,found under the skin,adv,RB,2
+supine,supine,lying on the back,adj,JJ,2
+suture,suture,stitch,noun,NN,1
+suture,sutures,stitches,noun plural,NNS,1
+suture,suture,stitch,verb non3rd sing present,VBP,1
+suture,sutures,stitches,verb 3rd sing present,VBZ,1
+suture,sutured,stitched,verb past tense,VBD,1
+suture,suturing,stitching,verb gerund,VBG,1
+suture,suture,stitch,inf,VB,1
+suture,sutured,stitched,verb pp,VBN,1
+syndrome,syndrome,condition characterized by a set of syndromes,noun,NN,2
+syndrome,syndromes,conditions characterized by a set of syndromes,noun plural,NNS,2
+systolic,systolic,top number in blood pressure,noun,NN,2
+T-lymphocyte,T-lymphocyte,white blood cell,noun,NN,2
+T-lymphocyte,T-lymphocytes,white blood cells,noun plural,NNS,2
+tachycardia,tachycardia,fast heart rate,noun,NN,2
+tachycardia,tachycardial,racing heart,adj,JJ,2
+tachycardia,tachycardias,fast heart rates,noun plural,NNS,2
+teratogenic,teratogenic,capable of causing malformation in a fetus,adj,JJ,2
+teste,teste,male sex gland,noun,NN,2
+teste,testes,male sex glands,noun plural,NNS,2
+testicle,testicle,male sex gland,noun,NN,2
+testicle,testicles,male sex glands,noun plural,NNS,2
+thrombocytopenia,thrombocytopenia,having a low number of platelets,noun,NN,2
+thrombus,thrombus,blood clot,noun,NN,2
+thrombus,thrombi,blood clots,noun plural,NNS,2
+thrombus,thrombosis,blood clotting,noun,NN,2
+tinnitus,tinnitus,ringing in the ears,noun,NN,2
+titrate,titration,method for deciding on strength of a drug,noun,NN,2
+titrate,tritrations,methods for deciding on strength of a drug,noun plural,NNS,2
+titrate,tritrate,decide the strength of a drug,verb non3rd sing present,VBP,2
+titrate,tritrates,decides the strength of a drug,verb 3rd sing present,VBZ,2
+titrate,titrated,decided the strength of a drug,verb past tense,VBD,2
+titrate,titrating,deciding athe strength of a drug,verb gerund,VBG,2
+titrate,titrated,decide the strength of a drug,inf,VB,2
+titrate,tritrated,decided the strength of a drug,verb pp,VBN,2
+topical,topical,top of the surface,adj,JJ,2
+topical,topically,top of the surface,adv,RB,2
+transdermal,transdermal,through the skin,adj,JJ,2
+transdermal,transdermally,through the skin,adv,RB,2
+transplant,transplant,movement of an organ or tissue from one body to another,noun,NN,1
+transplant,transplants,movements of an organ or tissue from one body to another,noun plural,NNS,1
+transplant,transplant,move an organ or tissue from one body to another,verb non3rd sing present,VBP,1
+transplant,tranplants,moves an organ or tissue from one body to another,verb 3rd sing present,VBZ,1
+transplant,transplanted,moved an organ or tissue from on body to another,verb past tense,VBD,1
+transplant,transplanting,moving an organ or tissue from one body to another,verb gerund,VBG,1
+transplant,transplant,move an organ or tissue from one body to another,inf,VB,1
+transplant,transplanted,moved an organ or tissue from on body to another,verb pp,VBN,1
+urticaria,urticaria,irritating hive,noun,NN,2
+urticaria,urticarias,alot of hives,noun plural,NNS,2
+urticaria,urticarial,irritating hives-like,adj,JJ,2
+valvuloplasty,valvuloplasty,repair of heart valve,noun,NN,2
+valvuloplasty,valvuloplasties,repairs of a heart valve,noun plural,NNS,2
+varix,varix,larger than normal vein,noun,NN,2
+varix,varices,larger than normal veins,noun plural,NNS,2
+vasospasm,vasospasm,narrowing of the blood vessel,noun,NN,2
+vasospasm,vasospasms,narrowing of the blood vessels,noun plural,NNS,2
+vasospasm,vasospasm,narrow the blood vessels,verb non3rd sing present,VBP,2
+vasospasm,vasospasms,narrows the blood vessels,verb 3rd sing present,VBZ,2
+vasospasm,vasospasmed,narrowed the blood vessels,verb past tense,VBD,2
+vasospasm,vasospasming,narrowing of the blood vessels,verb gerund,VBG,2
+vasospasm,vasospasm,narrow the blood vessels,inf,VB,2
+vasospasm,vasospamed,narrowed the blood vessels,verb pp,VBN,2
+vector,vector,carrier that can transmit disease,noun,NN,2
+vector,vectors,carriers that can transmit disease,noun plural,NNS,2
+venipuncture,venipuncture,blood draw,noun,NN,2
+venipuncture,venipunctures,blood draws,noun plural,NNS,2
+venipuncture,venipuncture,go into the skin with a needle,verb non3rd sing present,VBP,2
+venipuncture,venipunctures,goes into the skin with a needle,verb 3rd sing present,VBZ,2
+venipuncture,venipunctured,got into the skin with a needle,verb past tense,VBD,2
+venipuncture,venipuncturing,going into the skin with a needle,verb gerund,VBG,2
+venipuncture,venipuncture,go into the skin with a needle,inf,VB,2
+venipuncture,venipunctured,got into the skin with a needle,verb pp,VBN,2
+zoonotic,zoonotic,passing from animals to human,adj,JJ,1
+zoonotic,zoonotically,from animals to humans,advb,RB,1
+pruritis,pruritis,scratchy and itchy skin,noun isng,NN,2
+proximal,proximal,close to the center of the body,adj,JJ,2
+proximal,proximally,closely to the center of the body,adv,RB,2
+proteinuria,proteinuria,too much protein in the urine,noun sing,NN,2
+prosethesis,prosethesis,manufactured limb,noun,NN,2
+prosethesis,prosetheses,manufactured limbs,noun plural,NNS,2
+prenatal,prenatal,before birth,adj,JJ,2
+prenatal,prenatally,before birthing,adv,RB,2
+potentiate,potentiator,drug that helps another drug work better,noun,NN,2
+potentiate,potentiators,drugs that help other drugs work better,noun plural,NNS,2
+potentiate,potentiate,grow the effect of a drug,verb non3rd sing present,VBP,2
+potentiate,potentiates,grows the effect of a drug,verb 3rd sing present,VBZ,2
+potentiate,potentiated,grew the effect of a drug,verb past tense,VBD,2
+potentiate,potentiating,growing the effect of the drug,verb gerund,VBG,2
+potentiate,potentiate,grow the effect of a drug,inf,VB,2
+potentiate,potentiated,grew the effect of a drug,verb pp,VBN,2
+platelet,platelet,portion of the blood that causes clots,noun sing,NN,2
+platelet,platelets,portions of the blood that cause clots,noun plural,NNS,2
+plasma,plasma,fluid found in the blood,noun sing,NN,2
+placenta,placenta,remains of the afterbirth,noun sing,NN,2
+placenta,placentas,remainse of the afterbirths,noun plural,NNS,2
+placebo,placebo,non-active substance,noun sing,NN,2
+placebo,placebos,non-active substances,noun plural,NNS,2
+phlebitis,phlebitis,swelling of the vein,noun sing,NN,2
+phenotype,phenotype,physical manifestation of a gene,noun plural,NNS,2
+phenotype,phenotypes,physical manifestation of genes,noun sing,NN,2
+percutaneous,percutaneous,through the skin,adj,JJ,2
+percutaneous,percutaneously,through the skin,adv,RB,2
+pathogenesis,pathogenesis,development of a disease,noun sing,NN,2
+parenteral,parenteral,by injection,adj,JJ,2
+parenteral,parenterally,by injection,adv,RB,2
+pancytopenia,pancytopenia,non-normal decrease in the levels of all type of blood cells,noun sing,NN,2
+pancreatitis,pancreatitis,swelling of the pancreas that causes pain,noun sing,NN,2
+palpitate,palpitation,rapid heart beat,noun sing,NN,2
+palpitate,paplipations,rapid hear beats,noun plural,NNS,2
+ovary,ovary,female sex organ,noun sing,NN,2
+ovary,ovaries,female sex organ,noun plural,NNS,2
+osteoporosis,osteoporosis,ensoftening of the bones,noun sing,NN,2
+acuity,acuity,airway clearness,noun sing,NN,2
+adjuvant,adjuvant,assisting,adjective,JJ,2
+albumin,albumin,protein found in blood,noun sing,NN,2
+alopecia,alopecia,absence of hair,noun sing,NN,2
+ambulate,ambulate,use legs to walk,verb non3rd sing present,VBP,2
+ambulate,ambulates,uses legs to walk,verb 3rd sing present,VBZ,2
+ambulate,ambulation,act of walking,noun sing,NN,2
+ambulate,ambulatory,able to walk,noun sing,NN,2
+anaphylaxis,anaphylaxis,adverse allergic reaction,noun sing,NN,2
+anaphylaxis,anaphylactic,induced by a severe allergic reaction,adjective,JJ,2
+anasarca,anasarca,accumulation of fluid throughout the whole body,noun sing,NN,2
+anesthetic,anesthetic,agent that numbs,noun sing,NN,2
+anesthetic,anesthetics,agents that numb,noun plural,NNS,2
+anesthetic,anesthetically,a way of administering numbing drugs,adv,RB,2
+angina,angina,chest pain,noun sing,NN,2
+antecubital,antecubital,area on the inner surface of the forearm,noun sing,NN,2
+antibody,antibody,organic protein made to respond to foreign substance,noun sing,NN,2
+antibody,antibodies,organic proteins made to respond to foreign substance,noun plural,NNS,2
+anticonvulsant,anticonvulsant,agent used to prevent seizures,noun sing,NN,2
+anticonvulsant,anticonvulsants,agents used to prevent seizures,noun plural,NNS,2
+antiemetic,antiemetic,agent to prevent nausea,noun sing,NN,2
+antiemetic,antiemetics,agents to prevent nausea,noun plural,NNS,2
+antilipemic,antilipemic,agent that lowers fat levels in the blood,noun sing,NN,2
+antilipemic,antilipemics,agents that lower fat levels in the blood,noun plural,NNS,2
+antiretroviral,antiretroviral,agent that works against growth of some viruses,noun sing,NN,2
+antiretroviral,antiretrovirals,agents that work against growth of some viruses,noun plural,NNS,2
+antitussive,antitussive,agent used to relieve coughing,noun sing,NN,2
+antitussive,antitussives,agents used to relieve coughing,noun plural,NNS,2
+arrhythmia,arrhythmia,irregular heartbeat,noun sing,NN,2
+arrhythmia,arrhythmias,irregular heartbeats,noun plural,NNS,2
+arthralgia,arthalgia,intense joint pain,noun sing,NN,2
+ascites,ascites,increase of fluid in the abdomen,noun sing,NN,
+aspiration,aspiration,entering of fluid in the lungs,noun sing,NN,
+assay,assay,lab test,noun sing,NN,
+asthenia,asthenia,enfeebled and having no energy,noun sing,NN,
+asthma,asthma,air passage tightening lung disease,noun sing,NN,
+asthma,asthmatic,affected with air passage tightening,adjective,JJ,
+axilla,axilla,armpit,noun sing,NN,
+axilla,axillae,armpits,noun plural,NNS,
+bilirubinemia,bilirubinemia,high levels of a yellow pigment in the blood,noun sing,NN,
+bilirubin,bilirubin ,yellow pigment found in blood,noun sing,NN,
+bioavailable,bioavailability,substance availability to the body,noun sing,NN,
+bioavailable,bioavailable,substance that can be easily absorbed by the body,adjective,JJ,
+biologic,biologic,"theraputic serum, toxin, or anti-toxin that can prevent/treat/cure injuries",noun sing,NN,
+biologic,biologics,"theraputic serums, toxins, or anti-toxins that can prevent/treat/cure injuries",noun plural,NNS,
+bolus,bolus,large amount given all at once,noun sing,NN,
+bradycardia,bradycardia,slow heartbeat,noun sing,NN,
+bronchospasm,bronchospasm,breathing distress caused by narrowing of airways,noun sing,NN,
+bronchospasm,bronchospasms,breathing distresses caused by narrowing of airways,noun plural,NNS,
+cardiomyopathy,cardiomyopathy,heart muscle damage causing heart to pump improperly,noun sing,NN,
+cardiovascular,cardiovascular,heart and blood vessels,noun sing,NN,
+cardioversion,cardioversion,return to normal heartbeat by electric shock,noun sing,NN,
+catheter,catheter,tube for withdrawing or giving fluids,noun sing,NN,
+catheter,catheters,tubes for withdrawing or giving fluids,noun plural,NNS,
+catheter,catheterization,process of inserting a tube for fgiving or withdrawing fluids into the body,noun sing,NN,
+cease,cessation,stopping,noun sing,NN,
+cease ,cease,stop,verb non3rd sing present,VBP,
+cease,ceases,stops,verb 3rd sing present,VBZ,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,1
