@@ -45,4 +45,4 @@ We have included a script that runs our full training pipeline from start to fin
 # Running the model
 Once the model has been trained, it will appear locally as a folder NAME_OF_MODEL. You can then run the test files through the trained model with the following command:
 
-./testing_pipeline [NAME_OF_MODEL] [PATH_TO_TEST_FILES] [PATH_TO_OUTPUT_FILES]
+./testing_pipeline.sh [NAME_OF_MODEL] [PATH_TO_TEST_FILES] [PATH_TO_OUTPUT_FILES]
