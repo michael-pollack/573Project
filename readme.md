@@ -51,7 +51,7 @@ summarize_hf.py - work-around for run_abstractive.py that uses a Hugging Face mo
 # Training the model
 We have included a script that runs our full training pipeline from start to finish. Please call training_pipeline.sh specifying your training files and your validation files in the following manner:
 
-./training_pipeline.sh [NAME_OF_MODEL] [PATH_TO_TEST_PARQUET_FILES] [PATH_TO_TRAIN_PARQUET_FILES]
+./training_pipeline.sh [NAME_OF_MODEL] [PATH_TO_TRAIN_PARQUET_FILES] [PATH_TO_VAL_PARQUET_FILES]
 
 # Running the model
 Once the model has been trained, it will appear locally as a folder NAME_OF_MODEL. You can then run the test files through the trained model with the following command:

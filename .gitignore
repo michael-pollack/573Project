@@ -2,6 +2,7 @@ project copy.ipynb
 elife.txt
 pegasus_large_model/
 pegasus_large_model_x2/
+pipeline_test_model/
 evaluation_results.csv
 *.bin
 pegasus_xsum/
