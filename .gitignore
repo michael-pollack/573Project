@@ -10,6 +10,7 @@ old/
 data/
 project_messy.ipynb
 evaluation/
+pipeline_no_val/
 
 evaluation/elife_summaries100.txt
 data/PLOS/tfidf_summaries/

@@ -24,7 +24,7 @@ def load_data(train_path, val_path):
 
     dataset = DatasetDict({
         'train': Dataset.from_pandas(train_df),
-        'validation': Dataset.from_pandas(val_df),
+        # 'validation': Dataset.from_pandas(val_df),
     })
     return dataset
 
@@ -81,7 +81,7 @@ def main():
         model=model,
         args=training_args,
         train_dataset=tokenized_datasets["train"],
-        eval_dataset=tokenized_datasets["validation"],
+        # eval_dataset=tokenized_datasets["validation"],
         tokenizer=tokenizer,
         data_collator=DataCollatorForSeq2Seq(tokenizer, model=model),
     )
