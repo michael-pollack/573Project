@@ -41,3 +41,4 @@ validation/elife_clean_50.csv
 validation/elife_clean_tfidf_val_50.json
 validation/elife_clean_tfidf_val_50.txt
 validation/elife_val_50.txt
+results_elife_50.csv
