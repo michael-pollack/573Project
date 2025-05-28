@@ -9,6 +9,7 @@ from nltk.stem import WordNetLemmatizer
 from nltk.tokenize import regexp_tokenize, word_tokenize, RegexpTokenizer
 import pandas as pd
 import re
+import string
 
 # THIS FUNCTION MAKES TWO VERSIONS OF THE DOC: ONE WITH ALL LEMMAS AND ONE THE RAW VERSION
 def make_lemma_doc(og_doc):

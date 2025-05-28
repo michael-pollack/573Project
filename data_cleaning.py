@@ -9,6 +9,7 @@ from nltk.stem import WordNetLemmatizer
 from nltk.tokenize import RegexpTokenizer #regexp_tokenize, word_tokenize, 
 import pandas as pd
 import re
+from tqdm import tqdm
 
 #initally removes things between parenthesis to keep sentence number stable in later process
 def remove_between_parens(doc):
@@ -84,25 +85,26 @@ if __name__ == "__main__":
 
     # run data through data parens cleaning function
     no_parens_corpus = []
-    for doc in articles:
+    for doc in tqdm(articles, "Cleaning parenthesis..."):
         no_parens_corpus.append(remove_between_parens(doc))
     print("done cleaning parentheses")
 
     # runs data through data cleaning function
     clean_corpus = []
-    for doc in no_parens_corpus:
+    for doc in tqdm(no_parens_corpus, "Cleaning data..."):
         clean_corpus.append(data_cleaner(doc))
     print("done cleaning data")
     new_df['clean'] = clean_corpus
 
-    if '.' in args.output_csv:
-        name, ext = args.output_csv.rsplit('.', 1)
-    else:
-        name, ext = args.output_csv, ''
+    # if '.' in args.output_csv:
+    #     name, ext = args.output_csv.rsplit('.', 1)
+    # else:
+    #     name, ext = args.output_csv, ''
 
-    filename = f"{name}_{args.num_lines}.{ext}"
+    # filename = f"{name}_{args.num_lines}.{ext}"
 
-    new_df.to_csv(filename, index=True)
+    # new_df.to_csv(filename, index=True)
+    new_df.to_csv(args.output_csv, index=True)
 
     """
     python /home/jen/573Project-1/data_cleaning.py   \
