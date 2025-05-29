@@ -21,7 +21,6 @@ def make_lemma_doc(og_doc):
     return doc, lemmas
 
 # THIS FUNCTION RETURNS A BOOLEAN. TRUE=SKIP THE CURRENT WORD
-"""
 def skip(raw, index):
     skip = False # Set skip to false at first
     # Check after words
@@ -52,7 +51,6 @@ def skip(raw, index):
             break
 
     return skip 
-"""
 
 # THIS FUNCTION FINDS WORDS THAT NEED TO BE REPLACED AND REPLACES THEM IN THE RAW VERSION
 def find_and_replace(raw, lemma):
@@ -94,10 +92,6 @@ if __name__ == "__main__":
         type=str
     )
     parser.add_argument(
-        "--skip_csv", # This is the path to the csv of skip phrases
-        type=str
-    )
-    parser.add_argument(
         "--output_json", # This is the path to the output
         type=str
     )
@@ -108,20 +102,20 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     # Read the summaries, skip_phrases, and layterm_dictionary as dataframes
-    summary_df = pd.read_json(args.summaries_json)
-    #skip_phrases_df = pd.read_csv(args.skip_csv)
-    layterm_dictionary_df = pd.read_csv(args.dictionary_csv)
+    #summary_df = pd.read_json(args.summaries_json)
+    summary_df = pd.read_csv(args.summaries_json)
+    skip_phrases_df = pd.read_csv('dictionary/skip_phrases.csv')
 
-    #after_skip_phrases = skip_phrases_df['after_skip'] # List of phrases AFTER the word that makes it skipable
-    #after_skip_phrases = [phrase.split() for phrase in after_skip_phrases] # Split every phrase into list
-    #prev_skip_phrases = skip_phrases_df['pref_skip'] # List of phrases BEFORE the word that makes it skipable
-    #prev_skip_phrases = [phrase.split() for phrase in prev_skip_phrases] # Split every phrase into a list
+    after_skip_phrases = skip_phrases_df['Phrase_after_medword'] # List of phrases AFTER the word that makes it skipable
+    after_skip_phrases = [str(phrase).split(" ") for phrase in after_skip_phrases if isinstance(phrase,str)] # Split every phrase into list
+    prev_skip_phrases = skip_phrases_df['Phrase_before_medword'] # List of phrases BEFORE the word that makes it skipable
+    prev_skip_phrases = [str(phrase).split(" ") for phrase in prev_skip_phrases if isinstance(phrase,str)] # Split every phrase into a list
 
-    #max_after_skip = len(max(after_skip_phrases, key=len)) # Get max length of after_phrase
-    #max_prev_skip = len(max(prev_skip_phrases, key=len)) # Get max length of prev_phrase
+    max_after_skip = len(max(after_skip_phrases, key=len)) # Get max length of after_phrase
+    max_prev_skip = len(max(prev_skip_phrases, key=len)) # Get max length of prev_phrase
 
     # ADD CODE TO MAKE TERM_DICT FROM DATAFRAME
-    lexicon_df = pd.read_csv('lexicon.csv') #read in lexicon csv
+    lexicon_df = pd.read_csv('dictionary/lexicon.csv') #read in lexicon csv
     lexicon_df_clean = lexicon_df.drop(['Lemma', 'POS', 'bib_num'], axis = 1) #drop uneeded columns
     df_lexicon_clean = lexicon_df_clean.dropna() #drop extra rows
     med_terms = df_lexicon_clean['Forms'].tolist() #get list of med terms
