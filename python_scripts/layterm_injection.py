@@ -56,10 +56,10 @@ def skip(raw, index):
 def find_and_replace(raw, lemma):
     """function for matching the location in the raw doc with contents of the lemma doc at the parallel location"""
     for word_id in range(0, len(lemma)): # For every word in the document
-        if skip(raw, word_id) == False: # If not a skip word
-            curr_lemma_pos = lemma[word_id] # Get the current lemma,POS pair
-            curr_lemma = curr_lemma_pos[0] # Get the current word's lemma
-            if curr_lemma in term_dict: # If the lemma is in the dictionary
+        curr_lemma_pos = lemma[word_id] # Get the current lemma,POS pair
+        curr_lemma = curr_lemma_pos[0] # Get the current word's lemma
+        if curr_lemma in term_dict: # If the lemma is in the dictionary
+            if skip(raw, word_id) == False: # If not a skip word
                 replace_options = term_dict[curr_lemma] # Get the list of replacement options
                 for layterm_tag in replace_options: # For every layterm, POS pair in the options
                     if curr_lemma_pos[1] == layterm_tag[1]: # If the current POS matches the layterm POS
