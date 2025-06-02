@@ -83,7 +83,6 @@ If you wish to run the falconsai/medical_texts model instead of our fine_tuned m
 │   ├── lexicon.csv
 │   └── skip_phrases.csv
 ├── environment.yml
-├── evaluation.py
 ├── images
 ├── notebooks
 │   ├── evaluation.ipynb
@@ -92,6 +91,7 @@ If you wish to run the falconsai/medical_texts model instead of our fine_tuned m
 ├── python_scripts
 │   ├── data_cleaning.py
 │   ├── fine_tune_abstractive.py
+│   ├── evaluation.py
 │   ├── layterm_injection.py
 │   ├── lora_summarization_elife.py # experiment with running LoRA
 │   ├── run_abstractive.py
