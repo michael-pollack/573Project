@@ -55,7 +55,9 @@ def skip(raw, index):
 
 # THIS FUNCTION FINDS WORDS THAT NEED TO BE REPLACED AND REPLACES THEM IN THE RAW VERSION
 def find_and_replace(raw, lemma):
-    """function for matching the location in the raw doc with contents of the lemma doc at the parallel location"""
+    """function for matching the location in the raw doc with contents of the lemma doc at the parallel location
+    Returns the number of replacements made."""
+    count = 0
     for word_id in range(0, len(lemma)): # For every word in the document
         curr_lemma_pos = lemma[word_id] # Get the current lemma,POS pair
         curr_lemma = curr_lemma_pos[0] # Get the current word's lemma
@@ -65,6 +67,8 @@ def find_and_replace(raw, lemma):
                 for layterm_tag in replace_options: # For every layterm, POS pair in the options
                     if curr_lemma_pos[1] == layterm_tag[1]: # If the current POS matches the layterm POS
                         raw[word_id] = layterm_tag[0] # Replace the word in the raw doc with the new replacement
+                        count += 1
+    return count
 
 # THIS FUNCTION CONVERTS A SENTENCE IN LIST FORM TO A WELL-FORMATTED STRING
 def format_summary(og_summ):
@@ -139,11 +143,15 @@ if __name__ == "__main__":
     
     og_summ_list = summary_df.summary.tolist() # Get just the summaries from the previous dataframe
     layterm_summaries = [] # Save the replaced summaries
+    total_replacements = 0
 
     for summ in tqdm(og_summ_list, desc="Injecting lay terms"): # For every summary in the data (currently elife_train, can be changed above)
         raw, lemma = make_lemma_doc(summ) # Make raw and lemma versions of the summary
-        find_and_replace(raw, lemma) # Do layterm injection
+        count = find_and_replace(raw, lemma) # Do layterm injection and count replacements
+        total_replacements += count
         layterm_summaries.append(raw) # Add the new summary to the list
+
+    print(f"Total layterm replacements made: {total_replacements}")
 
     # Try converting the layterm summaries to better format
     final_summaries = [] # Collect final formatted summaries
@@ -159,3 +167,13 @@ if __name__ == "__main__":
     with open(args.output_txt, 'w') as f:
         for summary in summary_list:
             f.write(summary + '\n')
+
+    print(f"Layterm summaries saved to {args.output_json} and {args.output_txt}.\nYou can now use these summaries for further processing or analysis.")
+
+"""
+
+python layterm_injection.py --summaries_json path/to/summaries.json --output_json path/to/output.json --output_txt path/to/output.txt
+
+python layterm_injection.py --summaries_json data/Elife_validation_summaries.json --output_json data/Elife_validation_summaries_layterm.json --output_txt data/Elife_validation_summaries_layterm.txt
+
+"""
