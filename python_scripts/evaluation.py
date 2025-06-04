@@ -1,13 +1,43 @@
+""" 
+Evaluation script for comparing generated texts with reference texts using various metrics.
+This script calculates multiple evaluation metrics for text generation tasks, including:
+- ROUGE (1, 2, and L)
+- BLEU
+- METEOR
+- BERTScore (Precision, Recall, F1)
+- Readability metrics (FKGL, DCRS, CLI)
+
+The script takes generated summaries and reference summaries as input files, computes metrics
+for each pair, and outputs results to a CSV file as well as displaying average scores.
+Functions:
+    evaluate_generated_texts: Evaluates generated texts against reference texts using multiple metrics
+    main: Parses command line arguments and runs the evaluation
+Usage:
+    python python_scripts/evaluation.py --generated_path <path_to_generated_texts> 
+                                       --reference_path <path_to_reference_texts> 
+                                       --output_csv <optional_output_path>
+Example:
+    python python_scripts/evaluation.py --generated_path data/Elife_validation_summaries_layterm.json 
+                                       --reference_path validation/validation_elife_summaries.txt 
+                                       --output_csv results_elife.csv
+
+Note:
+    Some additional metrics like SummaC (for factuality) are included in the code but commented out.
+    Uncomment and install necessary dependencies to use these metrics.
+ """
+
 # have this at the top to supress warnings from the imports
 import warnings
 warnings.simplefilter(action='ignore', category=FutureWarning)
 
-import textstat
-#import torch
+
 from evaluate import load
-#from summac.model_summac import SummaCZS
 import pandas as pd
 import argparse
+from tqdm import tqdm
+#from summac.model_summac import SummaCZS
+import textstat
+#import torch
 
 def evaluate_generated_texts(generated_path, reference_path, output_csv=None, rouge=None, bleu=None, bertscore=None, meteor=None, summaC=None):
     # Read text files
@@ -20,7 +50,7 @@ def evaluate_generated_texts(generated_path, reference_path, output_csv=None, ro
 
     results = []
 
-    for i, (pred, ref) in enumerate(zip(preds, refs)):
+    for i, (pred, ref) in enumerate(tqdm(list(zip(preds, refs)), desc="Evaluating")):
         try:
             result = {
                 "ID": i,
@@ -55,8 +85,8 @@ def evaluate_generated_texts(generated_path, reference_path, output_csv=None, ro
 
 def main():
     parser = argparse.ArgumentParser(description="Evaluate generated texts against reference texts")
-    parser.add_argument("generated_path", help="Path generated text file")
-    parser.add_argument("reference_path", help="Path reference text file")
+    parser.add_argument("--generated_path", help="Path generated text file")
+    parser.add_argument("--reference_path", help="Path reference text file")
     parser.add_argument("--output_csv", help="Path to output CSV file", default=None)
     args = parser.parse_args()
 
@@ -94,9 +124,5 @@ if __name__ == "__main__":
 
 
     """
-    python evaluation.py validation/plos_clean_10.txt validation/valdiation_plos_summaries_10.txt --output_csv results.csv
-    python evaluation.py validation/elife_clean_val_100.txt validation/elife_val_100.txt --output_csv results_elife.csv
-    python evaluation.py test_predictions.txt validation/validation_elife_summaries.txt --output_csv results_elife.csv
-    
-
+    python python_scripts/evaluation.py --generated_path data/Elife_validation_summaries_layterm.json --reference_path validation/validation_elife_summaries.txt --output_csv results_elife.csv
     """
