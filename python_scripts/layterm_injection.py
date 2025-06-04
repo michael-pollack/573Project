@@ -10,6 +10,7 @@ from nltk.tokenize import regexp_tokenize, word_tokenize, RegexpTokenizer
 import pandas as pd
 import re
 import string
+from tqdm import tqdm
 
 # THIS FUNCTION MAKES TWO VERSIONS OF THE DOC: ONE WITH ALL LEMMAS AND ONE THE RAW VERSION
 def make_lemma_doc(og_doc):
@@ -102,8 +103,8 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     # Read the summaries, skip_phrases, and layterm_dictionary as dataframes
-    #summary_df = pd.read_json(args.summaries_json)
-    summary_df = pd.read_csv(args.summaries_json)
+    summary_df = pd.read_json(args.summaries_json, lines=True)
+    #summary_df = pd.read_csv(args.summaries_json)
     skip_phrases_df = pd.read_csv('dictionary/skip_phrases.csv')
 
     after_skip_phrases = skip_phrases_df['Phrase_after_medword'] # List of phrases AFTER the word that makes it skipable
@@ -123,7 +124,9 @@ if __name__ == "__main__":
     lemma_list = []
     for term in med_terms:
         lemma_list.append(lemmatizer.lemmatize(term)) #lemmatize all med words
-    check = pd.Series(lemma_list) 
+
+    check = pd.Series(lemma_list)
+    df_lexicon_clean = df_lexicon_clean.copy()
     df_lexicon_clean['lemma'] = check.values #add lemmas back to df
     tup_obj = list(zip(df_lexicon_clean['layman'], df_lexicon_clean['Tag'], df_lexicon_clean['lemma'])) #make a tuple object in the form of (layman term, POS tag, lemma)
     term_dict = {}
@@ -137,14 +140,14 @@ if __name__ == "__main__":
     og_summ_list = summary_df.summary.tolist() # Get just the summaries from the previous dataframe
     layterm_summaries = [] # Save the replaced summaries
 
-    for summ in og_summ_list: # For every summary in the data (currently elife_train, can be changed above)
+    for summ in tqdm(og_summ_list, desc="Injecting lay terms"): # For every summary in the data (currently elife_train, can be changed above)
         raw, lemma = make_lemma_doc(summ) # Make raw and lemma versions of the summary
         find_and_replace(raw, lemma) # Do layterm injection
         layterm_summaries.append(raw) # Add the new summary to the list
 
     # Try converting the layterm summaries to better format
     final_summaries = [] # Collect final formatted summaries
-    for summ in layterm_summaries: 
+    for summ in tqdm(layterm_summaries, desc="Formatting summaries"):
         new_summ = format_summary(summ)
         final_summaries.append(new_summ)
 
